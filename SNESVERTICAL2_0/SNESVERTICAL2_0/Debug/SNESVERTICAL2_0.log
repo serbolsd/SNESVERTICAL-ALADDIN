@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\users\sergi\source\repos\snesvertical2_0\snesvertical2_0\dependences\include\sfml\window\sfkeyboard.h(10): warning C4273: 'sf::Keyboard::isKeyPressed': vinculación de DLL incoherente
+  c:\users\sergi\source\repos\snesvertical2_0\snesvertical2_0\dependences\include\sfml\window\keyboard.hpp(172): note: vea la definición anterior de 'isKeyPressed'
+c:\users\sergi\source\repos\snesvertical2_0\snesvertical2_0\dependences\include\sfml\window\sfkeyboard.h(17): warning C4273: 'sf::Keyboard::setVirtualKeyboardVisible': vinculación de DLL incoherente
+  c:\users\sergi\source\repos\snesvertical2_0\snesvertical2_0\dependences\include\sfml\window\keyboard.hpp(187): note: vea la definición anterior de 'setVirtualKeyboardVisible'
+  SNESVERTICAL2_0.vcxproj -> C:\Users\sergi\source\repos\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe
