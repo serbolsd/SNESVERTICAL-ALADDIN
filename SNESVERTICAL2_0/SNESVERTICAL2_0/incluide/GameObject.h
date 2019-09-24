@@ -29,7 +29,7 @@ public:
 	sf::Vector3f getPosition() { return position; };
 	void setID(int id) { ID = id; };
 	int getID() { return ID; };
-
+	sf::RectangleShape getshape() { return shape; };
 private:
 	std::vector<Component*> components;
 	int ID;
