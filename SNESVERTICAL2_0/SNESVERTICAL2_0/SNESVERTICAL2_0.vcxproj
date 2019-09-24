@@ -121,12 +121,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\CCamera.cpp" />
+    <ClCompile Include="source\component.cpp" />
     <ClCompile Include="source\CWindow.cpp" />
+    <ClCompile Include="source\GameObject.cpp" />
     <ClCompile Include="source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="incluide\CCamera.h" />
+    <ClInclude Include="incluide\component.h" />
     <ClInclude Include="incluide\CWindow.h" />
+    <ClInclude Include="incluide\GameObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
