@@ -25,7 +25,7 @@ int main()
 			if (event.type == sf::Event::Closed) {
 				window.close();
 			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape))
+			if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Escape))
 			{
 				exit(1);
 			}

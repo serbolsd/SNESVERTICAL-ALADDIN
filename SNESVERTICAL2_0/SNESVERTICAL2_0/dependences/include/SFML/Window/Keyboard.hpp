@@ -169,7 +169,7 @@ public:
     /// \return True if the key is pressed, false otherwise
     ///
     ////////////////////////////////////////////////////////////
-    static bool isKeyPressed(Key key);
+    //static bool isKeyPressed(Key key);
 
     ////////////////////////////////////////////////////////////
     /// \brief Show or hide the virtual keyboard
@@ -184,7 +184,7 @@ public:
     /// \param visible True to show, false to hide
     ///
     ////////////////////////////////////////////////////////////
-    static void setVirtualKeyboardVisible(bool visible);
+    //static void setVirtualKeyboardVisible(bool visible);
 };
 
 } // namespace sf
