@@ -80,7 +80,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\SNESVERTICAL2_0\dependences\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ImGui-SFML.lib;sfml-graphics-d.lib;sfml-graphics-s-d.lib;freetype.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;winmm.lib;gdi32.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ImGui-SFML.lib;sfml-graphics-d.lib;sfml-graphics-s-d.lib;freetype.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;sfml-audio.lib;winmm.lib;gdi32.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -120,6 +120,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Animation.cpp" />
     <ClCompile Include="source\CCamera.cpp" />
     <ClCompile Include="source\component.cpp" />
     <ClCompile Include="source\CWindow.cpp" />
@@ -127,14 +128,17 @@
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\RenderManager.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
+    <ClCompile Include="source\SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="incluide\CCamera.h" />
-    <ClInclude Include="incluide\component.h" />
-    <ClInclude Include="incluide\CWindow.h" />
-    <ClInclude Include="incluide\GameObject.h" />
-    <ClInclude Include="incluide\RenderManager.h" />
-    <ClInclude Include="incluide\SceneManager.h" />
+    <ClInclude Include="include\Animation.h" />
+    <ClInclude Include="include\CCamera.h" />
+    <ClInclude Include="include\component.h" />
+    <ClInclude Include="include\CWindow.h" />
+    <ClInclude Include="include\GameObject.h" />
+    <ClInclude Include="include\RenderManager.h" />
+    <ClInclude Include="include\SceneManager.h" />
+    <ClInclude Include="include\SoundManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

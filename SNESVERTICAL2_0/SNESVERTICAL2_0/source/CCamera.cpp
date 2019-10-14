@@ -1,4 +1,4 @@
-#include "../incluide/CCamera.h"
+#include "../include/CCamera.h"
 
 CCamera::CCamera()
 {

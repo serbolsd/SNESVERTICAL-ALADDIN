@@ -12,7 +12,7 @@ public:
 	void moveCam(const float &dirx, const float &diry, const float &dirz);
 	void initCamera(const float &posx, const float &posy, const float &width, const float &height);
 	void onDelete();
-	sf::Vector2f getPosition() { return sf::Vector2f(position.x, position.y); };
+	sf::Vector2f getPosition() { return sf::Vector2f(position->x, position->y); };
 private:
 	sf::View * m_view;
 	float minZoom = 0.8f;

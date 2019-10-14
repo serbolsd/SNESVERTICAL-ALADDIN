@@ -1,4 +1,4 @@
-#include "../incluide/RenderManager.h"
+#include "../include/RenderManager.h"
 
 
 RenderManager::RenderManager()
