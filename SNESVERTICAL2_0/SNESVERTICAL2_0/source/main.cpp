@@ -1,6 +1,6 @@
 #include <imgui-SFML.h>
 #include <imgui.h>
-#include <SFML/Graphics.hpp>
+#include "../incluide/CWindow.h"
 void imguiInterfaz();
 int main()
 {
