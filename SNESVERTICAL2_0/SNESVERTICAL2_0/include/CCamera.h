@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include"GameObject.h"
 class CCamera
 {
 public:
@@ -12,7 +13,12 @@ public:
 	void moveCam(const float &dirx, const float &diry, const float &dirz);
 	void initCamera(const float &posx, const float &posy, const float &width, const float &height);
 	void onDelete();
-	sf::Vector2f getPosition() { return sf::Vector2f(position->x, position->y); };
+	void setPosition(GameObject&Whatever);
+	void Update();
+	sf::Vector2f getPosition() { return sf::Vector2f(position->x, position->y);
+	
+	};
+	
 private:
 	sf::View * m_view;
 	float minZoom = 0.8f;

@@ -44,3 +44,15 @@ void CCamera::onDelete()
 {
 	delete m_view, position;
 }
+
+void CCamera::setPosition(GameObject& Whatever)
+{
+	position->x = Whatever.getPosition().x;
+	position->y = Whatever.getPosition().y;
+}
+
+void CCamera::Update()
+{
+	m_view->setCenter(position->x,position->y);
+}
+
