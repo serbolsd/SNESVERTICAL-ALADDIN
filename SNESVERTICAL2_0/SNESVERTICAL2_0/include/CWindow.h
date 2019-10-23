@@ -15,7 +15,7 @@ class CWindow
 public:
 	CWindow();
 	~CWindow();
-	void initWindow(const int & width = 600, const int &heihgt = 500,const std::string & windowName = "Uname", const WINDOWTYPE &tipe =WINDOWTYPE::TRenderWindow);
+	void initWindow(const std::string & windowName = "Uname", const int & width = 600, const int &heihgt = 500, const WINDOWTYPE &tipe =WINDOWTYPE::TRenderWindow);
 	void onDelete();
 	bool onUpdate();
 	bool onUpdateRenderW();

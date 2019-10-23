@@ -7,7 +7,7 @@ class RenderManager
 public:
 	RenderManager();
 	~RenderManager();
-	static void render(CWindow *&window, std::vector<GameObject> objects);
+	static void render(CWindow *&window, std::vector<GameObject*> objects);
 private:
 
 };

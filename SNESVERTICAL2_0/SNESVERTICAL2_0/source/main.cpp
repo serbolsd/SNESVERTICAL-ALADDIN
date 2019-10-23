@@ -1,9 +1,14 @@
 #include <imgui-SFML.h>
 #include <imgui.h>
 #include "../include/CWindow.h"
+#include "../include/mainManager.h"
 void imguiInterfaz();
 int main()
 {
+	mainManager play;
+	play.init();
+	play.onUpdate();
+	play.onDelete();
 	sf::RenderWindow window(sf::VideoMode(640, 480), "AWEBO");
 	window.setFramerateLimit(60);
 	ImGui::SFML::Init(window);
@@ -48,3 +53,5 @@ void imguiInterfaz()
 	ImGui::Text("que cosas no?");
 	ImGui::End();
 }
+
+

@@ -1,21 +1,6 @@
 #include "../include/GameObject.h"
 #include <iostream>
 
-GameObject::GameObject()
-{
-}
-
-GameObject::~GameObject()
-{
-}
-
-void GameObject::onInit()
-{
-}
-
-void GameObject::onUpdate()
-{
-}
 
 void GameObject::onDelete()
 {
@@ -65,6 +50,7 @@ void GameObject::setComponente(Component *newcomponent)
 			return;
 		}
 	}
+	newcomponent->myObject = this;
 	//si no se encuentra su existencia se agrega
 	components.push_back(newcomponent);
 }

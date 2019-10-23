@@ -9,7 +9,7 @@ CWindow::~CWindow()
 {
 }
 
-void CWindow::initWindow(const int & width, const int & heihgt, const std::string & windowName, const WINDOWTYPE & tipe)
+void CWindow::initWindow(const std::string & windowName, const int & width, const int & heihgt, const WINDOWTYPE & tipe)
 {
 	if (isWindowInit)
 	{

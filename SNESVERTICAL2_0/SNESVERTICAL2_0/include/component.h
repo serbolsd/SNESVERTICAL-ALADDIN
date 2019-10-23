@@ -4,15 +4,20 @@ enum typecomponent
 	unknow = 0,
 	collider,
 	sprite,
-	physic
+	physic,
+	parallax
 };
+class GameObject;
 class Component
 {
 public:
 	Component();
-	~Component();
-	void update() {};
+	virtual ~Component();
+	virtual void update() {};
 	typecomponent type = unknow;
+	GameObject* myObject;
+	int ID;
+	//agregar id, y el objeto al que pertenece
 private:
 
 };

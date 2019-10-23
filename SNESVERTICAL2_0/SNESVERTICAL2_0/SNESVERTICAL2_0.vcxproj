@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{BCAF92C8-E090-420F-AE0C-9B02FBFECD5D}</ProjectGuid>
     <RootNamespace>SNESVERTICAL20</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -120,23 +120,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Aladdin.cpp" />
     <ClCompile Include="source\Animation.cpp" />
     <ClCompile Include="source\CCamera.cpp" />
     <ClCompile Include="source\component.cpp" />
     <ClCompile Include="source\CWindow.cpp" />
     <ClCompile Include="source\GameObject.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\mainManager.cpp" />
+    <ClCompile Include="source\parallax.cpp" />
     <ClCompile Include="source\RenderManager.cpp" />
+    <ClCompile Include="source\ResourceManager.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Aladdin.h" />
     <ClInclude Include="include\Animation.h" />
     <ClInclude Include="include\CCamera.h" />
     <ClInclude Include="include\component.h" />
     <ClInclude Include="include\CWindow.h" />
     <ClInclude Include="include\GameObject.h" />
+    <ClInclude Include="include\InputManager.h" />
+    <ClInclude Include="include\mainManager.h" />
+    <ClInclude Include="include\parallax.h" />
     <ClInclude Include="include\RenderManager.h" />
+    <ClInclude Include="include\ResourceManager.h" />
     <ClInclude Include="include\SceneManager.h" />
     <ClInclude Include="include\SoundManager.h" />
   </ItemGroup>

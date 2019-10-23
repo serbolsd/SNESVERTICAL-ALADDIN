@@ -1,18 +1,23 @@
 #pragma once
 #include "RenderManager.h"
 #include "GameObject.h"
+#include "CCamera.h"
 class SceneManager
 {
 public:
 	SceneManager();
 	~SceneManager();
 	void onUpdate();
-	CWindow* wind;
-private:
-	std::vector<GameObject> gameObjects;
-	std::vector<GameObject> sceneObjects;
-	void culin();
-	void checkOrder();
+	void onDelete();
 
+	void addObject(GameObject* & newObject);
+	CWindow* wind;
+	CCamera* cam;
+	std::vector<GameObject*> gameObjects;
+	int IDmaxObject=0;
+private:
+	
+	void culin(std::vector<GameObject*> &scene);
+	void checkOrder(std::vector<GameObject*> &scene);
 
 };
