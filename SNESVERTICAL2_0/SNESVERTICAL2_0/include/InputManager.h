@@ -34,6 +34,7 @@ void InputManager::OnUpdate(Aladdin & player)
 
 inline void InputManager::keyboard(Aladdin & player)
 {
+	player.animatorID = 0;
 	if (//Veo si la cruzeta esta siendo precionada
 		sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Left) ||
 		sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Right)
@@ -44,11 +45,13 @@ inline void InputManager::keyboard(Aladdin & player)
 		direcction.x = 0;
 		if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Left))
 		{
+			player.animatorID = 1;
 			direcction.x += -1;
 		}
 		if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Right))
 		{
 			direcction.x += 1;
+			player.animatorID = 2;
 		}
 		
 		//si lo esta, le aplicao la direccion
@@ -60,6 +63,14 @@ inline void InputManager::keyboard(Aladdin & player)
 		{
 			player.isRun = true;//si lo hace cambia a verdadero
 			*player.actualSpeed = *player.speedRun;
+			if (player.animatorID == 1)
+			{
+				player.animatorID = 3;
+			}
+			else
+			{
+				player.animatorID = 4;
+			}
 		}
 		else
 		{
@@ -69,6 +80,7 @@ inline void InputManager::keyboard(Aladdin & player)
 	}
 	else
 	{
+		player.animatorID = 0;
 		*player.actualSpeed = 0;
 		player.isMove = false;
 		player.isRun = false;//si no, es falso
@@ -77,6 +89,7 @@ inline void InputManager::keyboard(Aladdin & player)
 	{
 		if (!player.isjumpBPressed)//si ya se esta saltando no se vuelve a aplicar 
 		{
+			player.animatorID = 5;
 			player.isjump = true;
 			player.isGrounded = false;
 		}
@@ -90,19 +103,23 @@ inline void InputManager::keyboard(Aladdin & player)
 	{
 		if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::A))//veo si se presiona el boton de planear
 		{
+			player.animatorID = 6;
 			player.isPlane = true;
 		}
 		else
 		{
+			player.animatorID = 5;
 			player.isPlane = false;
 		}
 	}
 	if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::X))//veo si se presiona el boton de lanzar
 	{
+		player.animatorID = 7;
 		player.isThrow = true;
 	}
 	if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Down))//veo si se esta agachando
 	{
+		player.animatorID = 8;
 		player.isCrouched = true;
 	}
 	else
