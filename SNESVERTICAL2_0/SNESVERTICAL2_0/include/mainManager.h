@@ -8,6 +8,7 @@
 #include "CCamera.h"
 #include <imgui-SFML.h>
 #include <imgui.h>
+#include "Animator.h"
 class mainManager
 {
 public:

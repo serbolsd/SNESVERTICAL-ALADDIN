@@ -9,6 +9,8 @@ int main()
 	play.init();
 	play.onUpdate();
 	play.onDelete();
+
+
 	sf::RenderWindow window(sf::VideoMode(640, 480), "AWEBO");
 	window.setFramerateLimit(60);
 	ImGui::SFML::Init(window);

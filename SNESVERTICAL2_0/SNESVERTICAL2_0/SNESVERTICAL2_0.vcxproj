@@ -122,6 +122,7 @@
   <ItemGroup>
     <ClCompile Include="source\Aladdin.cpp" />
     <ClCompile Include="source\Animation.cpp" />
+    <ClCompile Include="source\Animator.cpp" />
     <ClCompile Include="source\CCamera.cpp" />
     <ClCompile Include="source\component.cpp" />
     <ClCompile Include="source\CWindow.cpp" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="include\Aladdin.h" />
     <ClInclude Include="include\Animation.h" />
+    <ClInclude Include="include\Animator.h" />
     <ClInclude Include="include\CCamera.h" />
     <ClInclude Include="include\component.h" />
     <ClInclude Include="include\CWindow.h" />

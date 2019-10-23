@@ -10,17 +10,35 @@ mainManager::~mainManager()
 
 void mainManager::init()
 {
+	//init window
 	window = new CWindow();
-	window->initWindow("parallax", 512, 512);
+	window->initWindow("parallax", 50, 50);
 	window->getWindow()->setSize(sf::Vector2u(600, 500));
 	sceneManager.wind = window;
+	//init camera
 	camera = new CCamera();
 	camera->initCamera(0, 0, 600, 500);
 	sceneManager.cam = camera;
+	//animator descriptor
+	AnimatorDesc PathDescriptor;
+	PathDescriptor.RunPath = "resources\\AladdinAnimations\\sprint.png";
+	PathDescriptor.runProportion = sf::Vector2u(11, 1);
+	PathDescriptor.SwingPath = "resources\\AladdinAnimations\\swing.png";
+	PathDescriptor.IdlePath = "resources\\AladdinAnimations\\idle_Pos.png";
+	PathDescriptor.idleProportion = sf::Vector2u(1, 1);
+	//init aladdin
 	aladdin = new Aladdin();
 	aladdin->onInit();
+
+		Animator *AladdinAnimation= new Animator;
+		//init animator
+		AladdinAnimation->Init(PathDescriptor,aladdin->getshape(), 0);
+		Component* castAnimator = AladdinAnimation;
+		//set animator to aladin
+		aladdin->setComponente(castAnimator);
 	sceneManager.addObject(aladdin);
-	initParallax();
+	//init parallax
+	//initParallax();
 }
 
 void mainManager::onUpdate()
@@ -50,10 +68,12 @@ void mainManager::onUpdate()
 				exit(1);
 			}
 		}
+
 		sceneManager.onUpdate();
+
 		ImGui::SFML::Update(*window->getWindow(), deltaClock.restart());
 		imguiAladdinDebug();
-		imguiParallaxDebug();
+		//imguiParallaxDebug();
 		//window->getWindow()->draw(shape);
 		ImGui::SFML::Render(*window->getWindow());
 		window->getWindow()->display();
@@ -76,6 +96,9 @@ void mainManager::imguiAladdinDebug()
 	ImGui::InputFloat("actualspeed", aladdin->actualSpeed);
 	float v[2] = { aladdin->direction.x,aladdin->direction.y};
 	ImGui::InputFloat2("direcction", v);
+	int * id=new int(aladdin->animatorID);
+	ImGui::InputInt("direcction", id);
+	delete id;
 	ImGui::End();
 }
 void mainManager::imguiParallaxDebug()

@@ -25,7 +25,6 @@ public:
 	float JumpTime = 0;
 	std::string currentState = "Idle";
 	int IndexControl = -1;
-	int animatorID = 0;
 	//State* state = nullptr;
 	sf::CircleShape *circuShape=new sf::CircleShape(50,50);
 private:

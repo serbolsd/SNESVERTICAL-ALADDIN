@@ -43,7 +43,7 @@ public:
 	int getID() { return ID; };
 	void setTextureID(int id) { IDtexture = id; };
 	int getTextureID() { return IDtexture; };
-	sf::RectangleShape getshape() { return shape; };
+	sf::RectangleShape* getshape() { return shape; };
 	sf::Sprite getsprite() { return sprite; };
 	sf::Sprite sprite;
 
@@ -54,12 +54,14 @@ public:
 	float* speedPlane = nullptr;
 
 	sf::Vector2f direction;
-private:
+	float deltaTime;
+	int animatorID = 0;
+public:
 	std::vector<Component*> components;
 	int ID;
 	int IDtexture = 0;
 	TypeObject type;
 	sf::Vector3f position;
-	sf::RectangleShape shape;
+	sf::RectangleShape* shape;
 	
 };
