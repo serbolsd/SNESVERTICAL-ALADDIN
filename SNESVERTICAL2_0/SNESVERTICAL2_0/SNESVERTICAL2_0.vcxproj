@@ -120,6 +120,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CCollision.cpp" />
     <ClCompile Include="source\Animation.cpp" />
     <ClCompile Include="source\CCamera.cpp" />
     <ClCompile Include="source\component.cpp" />
@@ -131,6 +132,7 @@
     <ClCompile Include="source\SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CCollision.h" />
     <ClInclude Include="include\Animation.h" />
     <ClInclude Include="include\CCamera.h" />
     <ClInclude Include="include\component.h" />
