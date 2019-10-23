@@ -8,11 +8,11 @@ CCamera::~CCamera()
 {
 }
 
-void CCamera::setView(const float & posx, const float & posy, const float & width, const float & height)
+void CCamera::setView(sf::Vector2f* pos, const float & width, const float & height)
 {
-	position->x = posx;
-	position->y = posy;
+	position = pos;
 	m_view->reset(sf::FloatRect(position->x, position->y, width, height));
+	m_view->setCenter(position->x, position->y);
 }
 
 void CCamera::incrementZoom()
@@ -45,7 +45,7 @@ void CCamera::onDelete()
 	delete m_view, position;
 }
 
-void CCamera::setPosition(GameObject& Whatever)
+void CCamera::setPosition(sf::CircleShape& Whatever)
 {
 	position->x = Whatever.getPosition().x;
 	position->y = Whatever.getPosition().y;
