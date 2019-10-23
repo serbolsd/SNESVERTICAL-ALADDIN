@@ -23,7 +23,7 @@ Aladdin::~Aladdin()
 
 void Aladdin::onInit()
 {
-	circuShape = new sf::CircleShape(100,100);
+	circuShape = new sf::CircleShape(50,50);
 	circuShape->setFillColor(sf::Color::Blue);
 	speed=new float(10);
 	actualSpeed = new float(10);
@@ -31,7 +31,7 @@ void Aladdin::onInit()
 	speedJump = new float(10);
 	speedPlane = new float(10);
 	setPosition(0, -50, 0);
-	shape = new sf::RectangleShape(sf::Vector2f(50,50));
+	shape = new sf::RectangleShape(sf::Vector2f(100,100));
 }
 
 void Aladdin::onUpdate()

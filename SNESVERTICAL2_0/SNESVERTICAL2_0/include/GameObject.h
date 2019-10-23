@@ -54,7 +54,7 @@ public:
 	float* speedPlane = nullptr;
 
 	sf::Vector2f direction;
-	float deltaTime;
+	float *deltaTime;
 	int animatorID = 0;
 public:
 	std::vector<Component*> components;

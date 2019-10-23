@@ -31,4 +31,5 @@ private:
 	CWindow* window;
 	CCamera* camera;
 	void initParallax();
+	float* deltaTime;
 };

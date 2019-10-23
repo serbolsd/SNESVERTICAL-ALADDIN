@@ -48,7 +48,7 @@ void Animator::update()
   {
 	  changeAnim();
   }
-  m_animation.update(0, myObject->deltaTime, true);
+  m_animation.update(0, *myObject->deltaTime, true);
   myObject->getshape()->setTextureRect(m_animation.m_uvRect);
 }
 
@@ -68,7 +68,7 @@ Animation Animator::changeAnim()
 		m_animation.Init(&m_playerTexture, pathsDesc.idleProportion, .2f);
 		return m_animation;
 	}
-	if (myObject->animatorID == 1)
+	if (myObject->animatorID == 4)
 	{
 		/**
 		 * @brief : Swing Animation

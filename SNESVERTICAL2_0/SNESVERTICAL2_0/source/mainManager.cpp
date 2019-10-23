@@ -10,9 +10,10 @@ mainManager::~mainManager()
 
 void mainManager::init()
 {
+	deltaTime = new float(0);
 	//init window
 	window = new CWindow();
-	window->initWindow("parallax", 50, 50);
+	window->initWindow("parallax", 500, 500);
 	window->getWindow()->setSize(sf::Vector2u(600, 500));
 	sceneManager.wind = window;
 	//init camera
@@ -29,7 +30,7 @@ void mainManager::init()
 	//init aladdin
 	aladdin = new Aladdin();
 	aladdin->onInit();
-
+	aladdin->deltaTime = deltaTime;
 		Animator *AladdinAnimation= new Animator;
 		//init animator
 		AladdinAnimation->Init(PathDescriptor,aladdin->getshape(), 0);
@@ -38,7 +39,7 @@ void mainManager::init()
 		aladdin->setComponente(castAnimator);
 	sceneManager.addObject(aladdin);
 	//init parallax
-	//initParallax();
+	initParallax();
 }
 
 void mainManager::onUpdate()
@@ -49,7 +50,7 @@ void mainManager::onUpdate()
 	shape.setFillColor(sf::Color::Green);
 	shape.rotate(100);
 	shape.setPosition(320, 240);
-
+	window->getWindow()->setFramerateLimit(30);
 	sf::Clock deltaClock;
 	while (window->getWindow()->isOpen()) {
 		sf::Event event;
@@ -71,9 +72,10 @@ void mainManager::onUpdate()
 
 		sceneManager.onUpdate();
 
+		*deltaTime += sf::Time(deltaClock.getElapsedTime()).asSeconds();
 		ImGui::SFML::Update(*window->getWindow(), deltaClock.restart());
 		imguiAladdinDebug();
-		//imguiParallaxDebug();
+		imguiParallaxDebug();
 		//window->getWindow()->draw(shape);
 		ImGui::SFML::Render(*window->getWindow());
 		window->getWindow()->display();
@@ -87,6 +89,7 @@ void mainManager::onDelete()
 	//aladdin->onDelete();
 	//delete aladdin;
 	//aladdin = nullptr;
+	delete deltaTime;
 	sceneManager.onDelete();
 	resourceManager.onDelete();
 }
@@ -97,7 +100,7 @@ void mainManager::imguiAladdinDebug()
 	float v[2] = { aladdin->direction.x,aladdin->direction.y};
 	ImGui::InputFloat2("direcction", v);
 	int * id=new int(aladdin->animatorID);
-	ImGui::InputInt("direcction", id);
+	ImGui::InputInt("AnimID", id);
 	delete id;
 	ImGui::End();
 }
@@ -116,7 +119,7 @@ void mainManager::initParallax()
 	fondo1 = new GameObject();
 	sceneManager.addObject(fondo1);
 
-	resourceManager.loadTextures("resources\\fondo1.png", idtex, sceneManager.gameObjects[fondo1->getID()]->sprite);
+	resourceManager.loadTextures("resources\\Levels\\level1.gif", idtex, sceneManager.gameObjects[fondo1->getID()]->sprite);
 	sceneManager.gameObjects[fondo1->getID()]->setTextureID(idtex);
 	sceneManager.gameObjects[fondo1->getID()]->setPosition(0, 0, 5);
 
