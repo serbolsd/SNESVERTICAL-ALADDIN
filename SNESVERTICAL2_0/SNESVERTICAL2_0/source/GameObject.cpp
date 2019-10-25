@@ -31,7 +31,11 @@ void GameObject::setTypeObject(TypeObject typeobject)
 
 void GameObject::setPosition(sf::Vector3f pos)
 {
-	position = pos;
+	if (position==nullptr)
+	{
+		position = new sf::Vector3f();
+	}
+	*position = pos;
 }
 
 void GameObject::setPosition(float posx, float posy, float posz)

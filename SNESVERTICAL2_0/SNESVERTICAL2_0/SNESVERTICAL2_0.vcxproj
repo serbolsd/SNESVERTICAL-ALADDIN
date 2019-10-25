@@ -145,6 +145,7 @@
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\InputManager.h" />
     <ClInclude Include="include\mainManager.h" />
+    <ClInclude Include="include\MoveComponent.h" />
     <ClInclude Include="include\parallax.h" />
     <ClInclude Include="include\RenderManager.h" />
     <ClInclude Include="include\ResourceManager.h" />

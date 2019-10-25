@@ -23,19 +23,23 @@ Aladdin::~Aladdin()
 
 void Aladdin::onInit()
 {
-	circuShape = new sf::CircleShape(50,50);
+	circuShape = new sf::CircleShape(10,10);
 	circuShape->setFillColor(sf::Color::Blue);
-	speed=new float(10);
+	speed=new float(1);
 	actualSpeed = new float(10);
-	speedRun = new float(20);
+	speedRun = new float(1.5);
 	speedJump = new float(10);
 	speedPlane = new float(10);
 	setPosition(0, -50, 0);
-	shape = new sf::RectangleShape(sf::Vector2f(100,100));
+	shape = new sf::RectangleShape(sf::Vector2f(5,5));
+	shape->setOrigin(2.5,2.5);
+	shape->scale(12,12);
+	shape->setPosition(position->x,position->y);
 }
 
 void Aladdin::onUpdate()
 {
+	
 	InputManager::OnUpdate(*this);
 	for (int i = 0; i < components.size(); i++)
 	{
@@ -45,6 +49,7 @@ void Aladdin::onUpdate()
 
 void Aladdin::draw(sf::RenderWindow & wind)
 {
+	shape->setPosition(position->x,position->y);
 	wind.draw(*getshape());
 }
 
@@ -57,4 +62,3 @@ void Aladdin::onDelete()
 	delete speedJump;
 	delete speedPlane;
 }
-

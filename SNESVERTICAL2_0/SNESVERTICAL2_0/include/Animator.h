@@ -112,5 +112,6 @@ public:
   AnimatorDesc pathsDesc;
   sf::RectangleShape * Player; 
   unsigned int animID;
+  bool right=true;
 };
 

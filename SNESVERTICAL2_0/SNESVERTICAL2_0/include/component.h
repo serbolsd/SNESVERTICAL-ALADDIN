@@ -5,7 +5,8 @@ enum typecomponent
 	collider,
 	sprite,
 	physic,
-	parallax
+	parallax,
+	movement
 };
 class GameObject;
 class Component

@@ -68,19 +68,79 @@ Animation Animator::changeAnim()
 		m_animation.Init(&m_playerTexture, pathsDesc.idleProportion, .2f);
 		return m_animation;
 	}
-	if (myObject->animatorID == 4)
+	if (myObject->animatorID == 1)
 	{
 		/**
-		 * @brief : Swing Animation
+		 * @brief : walk for left Animation
 		 */
 		if (!m_playerTexture.loadFromFile(pathsDesc.RunPath))
 		{
 			std::cout << "cant lodad texture\n";
 		}
 		myObject->getshape()->setTexture(&m_playerTexture);
-		m_animation.Init(&m_playerTexture, pathsDesc.runProportion, .2f);
+		m_animation.Init(&m_playerTexture, pathsDesc.runProportion, 0.15f);
+		if (right)
+		{
+			right = false;
+			myObject->shape->scale(-1, 1);
+		}
 		return m_animation;
 	}
+	if (myObject->animatorID == 2)
+	{
+		/**
+		 * @brief : walk for right Animation
+		 */
+		if (!m_playerTexture.loadFromFile(pathsDesc.RunPath))
+		{
+			std::cout << "cant lodad texture\n";
+		}
+		myObject->getshape()->setTexture(&m_playerTexture);
+		m_animation.Init(&m_playerTexture, pathsDesc.runProportion, 0.15f);
+		if (!right)
+		{
+			right = true;
+			myObject->shape->scale(-1, 1);
+		}
+		return m_animation;
+	}
+	if (myObject->animatorID == 3)
+	{
+		/**
+		 * @brief : run for left Animation
+		 */
+		if (!m_playerTexture.loadFromFile(pathsDesc.RunPath))
+		{
+			std::cout << "cant lodad texture\n";
+		}
+		myObject->getshape()->setTexture(&m_playerTexture);
+		m_animation.Init(&m_playerTexture, pathsDesc.runProportion, 0.085f);
+		if (right)
+		{
+			right = false;
+			myObject->shape->scale(-1, 1);
+		}
+		return m_animation;
+	}
+	if (myObject->animatorID == 4)
+	{
+		/**
+		 * @brief : run for right Animation
+		 */
+		if (!m_playerTexture.loadFromFile(pathsDesc.RunPath))
+		{
+			std::cout << "cant lodad texture\n";
+		}
+		myObject->getshape()->setTexture(&m_playerTexture);
+		if (!right)
+		{
+			right = true;
+			myObject->shape->scale(-1, 1);
+		}
+		m_animation.Init(&m_playerTexture, pathsDesc.runProportion, 0.085f);
+		return m_animation;
+	}
+	
 }
 
 Animation & Animator::getAnimation()

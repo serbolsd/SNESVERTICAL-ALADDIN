@@ -9,6 +9,7 @@
 #include <imgui-SFML.h>
 #include <imgui.h>
 #include "Animator.h"
+#include "MoveComponent.h"
 class mainManager
 {
 public:

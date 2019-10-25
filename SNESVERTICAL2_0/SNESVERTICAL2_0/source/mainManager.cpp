@@ -18,7 +18,7 @@ void mainManager::init()
 	sceneManager.wind = window;
 	//init camera
 	camera = new CCamera();
-	camera->initCamera(0, 0, 600, 500);
+	camera->initCamera(0, 0,100,100);
 	sceneManager.cam = camera;
 	//animator descriptor
 	AnimatorDesc PathDescriptor;
@@ -30,13 +30,20 @@ void mainManager::init()
 	//init aladdin
 	aladdin = new Aladdin();
 	aladdin->onInit();
+	aladdin->setPosition(0,30,0);
 	aladdin->deltaTime = deltaTime;
+
 		Animator *AladdinAnimation= new Animator;
 		//init animator
 		AladdinAnimation->Init(PathDescriptor,aladdin->getshape(), 0);
 		Component* castAnimator = AladdinAnimation;
 		//set animator to aladin
 		aladdin->setComponente(castAnimator);
+		//set camera to follow aladdin
+		camera->setObjectFollow(aladdin);
+		//create de move component for aladdin
+		Component* move = new Movement();
+		aladdin->setComponente(move);
 	sceneManager.addObject(aladdin);
 	//init parallax
 	initParallax();
@@ -70,13 +77,15 @@ void mainManager::onUpdate()
 			}
 		}
 
+		camera->Update();
 		sceneManager.onUpdate();
 
-		*deltaTime += sf::Time(deltaClock.getElapsedTime()).asSeconds();
+		*deltaTime = sf::Time(deltaClock.getElapsedTime()).asSeconds();
 		ImGui::SFML::Update(*window->getWindow(), deltaClock.restart());
 		imguiAladdinDebug();
 		imguiParallaxDebug();
 		//window->getWindow()->draw(shape);
+		window->getWindow()->setView(*camera->getView());
 		ImGui::SFML::Render(*window->getWindow());
 		window->getWindow()->display();
 	}
@@ -101,6 +110,7 @@ void mainManager::imguiAladdinDebug()
 	ImGui::InputFloat2("direcction", v);
 	int * id=new int(aladdin->animatorID);
 	ImGui::InputInt("AnimID", id);
+	ImGui::SliderFloat("AnimatedSpeed", aladdin->animatedSpeed, 0, 1);
 	delete id;
 	ImGui::End();
 }
@@ -129,5 +139,5 @@ void mainManager::initParallax()
 
 	resourceManager.loadTextures("resources\\fondo2.jpg", idtex, sceneManager.gameObjects[fondo2->getID()]->sprite);
 	sceneManager.gameObjects[fondo2->getID()]->setTextureID(idtex);
-	sceneManager.gameObjects[fondo2->getID()]->setPosition(0, 0, 6);
+	sceneManager.gameObjects[fondo2->getID()]->setPosition(0, -10, 6);
 }

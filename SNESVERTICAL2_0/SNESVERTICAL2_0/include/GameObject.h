@@ -17,7 +17,9 @@ class GameObject
 public:
 
 	GameObject() {};
-	virtual ~GameObject() {};
+	virtual ~GameObject() {
+		delete animatedSpeed;
+	};
 	virtual void onInit() {};
 	virtual void onUpdate() 
 	{
@@ -28,7 +30,7 @@ public:
 	};
 	virtual void draw(sf::RenderWindow& wind)
 	{
-		sprite.setPosition(position.x, position.y);
+		sprite.setPosition(position->x, position->y);
 		wind.draw(sprite);
 	};
 	void onDelete();
@@ -38,7 +40,7 @@ public:
 	TypeObject getTypeObject() { return type; };
 	void setPosition(sf::Vector3f pos);
 	void setPosition(float posx = 0, float posy = 0, float posz = 0);
-	sf::Vector3f getPosition() { return position; };
+	sf::Vector3f getPosition() { return *position; };
 	void setID(int id) { ID = id; };
 	int getID() { return ID; };
 	void setTextureID(int id) { IDtexture = id; };
@@ -52,7 +54,7 @@ public:
 	float* speedRun = nullptr;
 	float* speedJump = nullptr;
 	float* speedPlane = nullptr;
-
+	float* animatedSpeed = new float(.2f);
 	sf::Vector2f direction;
 	float *deltaTime;
 	int animatorID = 0;
@@ -61,7 +63,7 @@ public:
 	int ID;
 	int IDtexture = 0;
 	TypeObject type;
-	sf::Vector3f position;
+	sf::Vector3f *position;
 	sf::RectangleShape* shape;
 	
 };
