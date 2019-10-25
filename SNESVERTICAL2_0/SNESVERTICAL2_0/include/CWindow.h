@@ -9,9 +9,9 @@ enum WINDOWTYPE
 	THandleWindow,
 	Twindow
 };
+
 class CWindow
 {
-	
 public:
 	CWindow();
 	~CWindow();
@@ -31,7 +31,5 @@ private:
 	bool isWindowInit = false;
 	WINDOWTYPE *tipeWin = nullptr;
 	sf::Event* event=nullptr;
-
-
 };
 
