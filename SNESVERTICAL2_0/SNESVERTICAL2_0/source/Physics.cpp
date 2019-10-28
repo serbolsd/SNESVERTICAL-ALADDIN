@@ -12,7 +12,8 @@ void Physics::onPrepare()
 
 void Physics::onShutDown()
 {
-
+	m_isFalling = false;
+	~Physics();
 }
 
 void Physics::update()

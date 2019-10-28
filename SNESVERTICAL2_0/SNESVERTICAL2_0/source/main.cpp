@@ -1,16 +1,19 @@
 #include <imgui-SFML.h>
 #include <imgui.h>
 #include "../include/CWindow.h"
+#include"../include/GameMap.h"
 void imguiInterfaz();
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(640, 480), "AWEBO");
 	window.setFramerateLimit(60);
+	GameMap gm;
+	gm.Init("level1.txt");
 	ImGui::SFML::Init(window);
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-	shape.rotate(100);
-	shape.setPosition(320,240);
+	//sf::CircleShape shape(100.f);
+	//shape.setFillColor(sf::Color::Green);
+	//shape.rotate(100);
+	//shape.setPosition(320,240);
 
 	sf::Clock deltaClock;
 	while (window.isOpen()) {
@@ -34,7 +37,8 @@ int main()
 		imguiInterfaz();
 
 		window.clear();
-		window.draw(shape);
+		//window.draw(shape);
+		gm.draw(window);
 		ImGui::SFML::Render(window);
 		window.display();
 	}
