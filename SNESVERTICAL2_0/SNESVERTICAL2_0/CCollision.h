@@ -7,5 +7,6 @@ public:
 	CCollision();
 	~CCollision();
 	bool Collision(sf::RectangleShape & check, sf::RectangleShape & collision);
+	bool Collision(sf::CircleShape & circle, sf::RectangleShape & collision);
 };
 
