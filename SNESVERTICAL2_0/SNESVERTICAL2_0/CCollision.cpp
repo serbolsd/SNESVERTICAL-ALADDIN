@@ -43,7 +43,7 @@ bool CCollision::Collision(sf::CircleShape & circle, sf::RectangleShape & rectan
 	if (circle.getPosition().x < rectangle.getPosition().x - (rectangle.getSize().x * 0.5f))         testX = rectangle.getPosition().x - (rectangle.getSize().x * 0.5f);      // test left edge
 	else if (circle.getPosition().x > rectangle.getPosition().x + (rectangle.getSize().x * 0.5f)) testX = rectangle.getPosition().x + (rectangle.getSize().x * 0.5f);   // right edge
 	if (circle.getPosition().y < rectangle.getPosition().y - (rectangle.getSize().y))         testY = rectangle.getPosition().y - (rectangle.getSize().y);      // top edge
-	else if (circle.getPosition().y > rectangle.getPosition().y + (rectangle.getSize().y)) testY = rectangle.getPosition().y + (rectangle.getSize().y);   // bottom edge
+	else if (circle.getPosition().y > rectangle.getPosition().y) testY = rectangle.getPosition().y;   // bottom edge
 
 	// get distance from closest edges
 	float distX = circle.getPosition().x - testX;
