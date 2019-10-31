@@ -11,17 +11,18 @@ using namespace std;
 class GameMap
 {
 public:
-	void Init(string file);
-	void draw(sf::RenderWindow& win);
+	void Init(string file);//Leemos los datos del archivo
+	void draw(sf::RenderWindow& win, int size);//Dibujamos en una ventana lo que tenemos
 
 	GameMap();
 	~GameMap();
 private:
-	sf::Texture m_background;
-	sf::Texture m_tileTexture;
-	sf::Sprite m_tiles;
-	sf::Sprite m_back;
-	sf::Vector2i m_map[5][5];
-	sf::Vector2i m_loadCounter;
+	sf::Texture m_background;//Textura del Background
+	sf::Texture m_tileTexture;//Tile Sheet completo
+	sf::Sprite m_tiles;//Sprite invididual de un tile
+	sf::Sprite m_back;//Sprite del fondo
+	sf::Vector2i m_map[100][100];//Mapa donde colocaaremos los tiles
+	sf::Vector2i m_loadCounter;//Nos ayudará a posicionar los tiles
+	int m_nx, m_ny;//Almacenaremos las dimensiones del mapa que hay en el archivo
 };
 

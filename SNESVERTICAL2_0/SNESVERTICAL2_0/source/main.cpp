@@ -38,7 +38,7 @@ int main()
 
 		window.clear();
 		//window.draw(shape);
-		gm.draw(window);
+		gm.draw(window, 32);
 		ImGui::SFML::Render(window);
 		window.display();
 	}
