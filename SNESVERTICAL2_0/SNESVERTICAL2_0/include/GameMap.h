@@ -21,7 +21,7 @@ private:
 	sf::Texture m_tileTexture;//Tile Sheet completo
 	sf::Sprite m_tiles;//Sprite invididual de un tile
 	sf::Sprite m_back;//Sprite del fondo
-	sf::Vector2i m_map[100][100];//Mapa donde colocaaremos los tiles
+	sf::Vector2i m_map[8][5];//Mapa donde colocaaremos los tiles
 	sf::Vector2i m_loadCounter;//Nos ayudará a posicionar los tiles
 	int m_nx, m_ny;//Almacenaremos las dimensiones del mapa que hay en el archivo
 };

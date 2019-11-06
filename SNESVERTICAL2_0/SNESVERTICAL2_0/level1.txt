@@ -1,7 +1,7 @@
 matrix-sequel.gif
 Tile_Sheet.jpg
 x,x x,x x,x x,x x,x x,x x,x x,x
-x,x x,x 0,0 1,0 2,0 x,x x,x x,x
-x,x x,x 0,1 1,1 2,1 x,x 5,5 x,x
-x,x x,x 0,2 1,2 2,2 x,x x,x x,x
+x,x x,x 0,0 1,0 x,x x,x x,x x,x
+x,x x,x x,x x,x x,x x,x 1,1 x,x
+x,x x,x 0,1 0,1 0,1 x,x x,x x,x
 x,x x,x x,x x,x x,x x,x x,x x,x
