@@ -4,7 +4,7 @@ SoundManager::SoundManager()
 {
 }
 
-void SoundManager::SoundFX(int& GameID)
+void SoundManager::SoundFX(int  GameID)
 {
 	sf::Sound Lmao;
 	sf::SoundBuffer Lmao2;

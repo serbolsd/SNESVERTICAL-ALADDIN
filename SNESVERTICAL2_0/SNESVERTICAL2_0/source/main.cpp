@@ -3,6 +3,7 @@
 #include <imgui.h>
 #include "../include/CWindow.h"
 #include "../include/CCamera.h"
+#include "../include/SoundManager.h"
 //void imguiInterfaz();
 //int main()
 //{
@@ -62,6 +63,7 @@ int main()
 	sf::RenderWindow Sure(sf::VideoMode(800, 600), "TESTIng");
 	sf::Keyboard Teclado;
 	CCamera pog;
+	SoundManager Lmao;
 	sf::Vector2f* pos=new sf::Vector2f(0,0);
 	GameObject.setPosition(*pos);
 	int follow = 1;
@@ -110,7 +112,7 @@ int main()
 		Sure.draw(GameObject);
 		Sure.draw(GameObject2);
 		Sure.display();
-		
+		Lmao.SoundFX(1);
 		Sure.setView(*pog.getView());
 
 	}

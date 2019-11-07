@@ -4,7 +4,7 @@ struct SoundManager {
 	bool  onOroff; 
 	bool pause;
 	SoundManager();//constructor
-	void SoundFX(int& GameID);
+	void SoundFX(int GameID);
 	void SceneSound(int&MusicID);
 	
 
