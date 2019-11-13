@@ -1,5 +1,2 @@
-﻿  GameMap.cpp
-c:\users\ferna\documents\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\gamemap.cpp(63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  main.cpp
-  Generando código...
-  SNESVERTICAL2_0.vcxproj -> C:\Users\ferna\Documents\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe
+﻿  main.cpp
+  SNESVERTICAL2_0.vcxproj -> C:\Users\frank\OneDrive\Documentos\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe
