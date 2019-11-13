@@ -132,11 +132,11 @@
     <ClCompile Include="source\SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameMap.h" />
     <ClInclude Include="include\Animation.h" />
     <ClInclude Include="include\CCamera.h" />
     <ClInclude Include="include\component.h" />
     <ClInclude Include="include\CWindow.h" />
+    <ClInclude Include="include\GameMap.h" />
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\RenderManager.h" />
     <ClInclude Include="include\SceneManager.h" />

@@ -46,11 +46,11 @@ void GameMap::Init(string file)
 	}
 }
 
-void GameMap::draw(sf::RenderWindow& win, int size)
+void GameMap::draw(sf::RenderWindow& win, float size)
 {//Primero dibujamos el fondo
 	win.draw(m_back);
 	//Ahora empezamos a dibujar cada tile
-	for (int i = 0; i < m_nx; i++)
+	for (int i = 0; i < m_nx+1; i++)
 	{
 		for (int j = 0; j < m_ny; j++)
 		{//Si los valores en esa posición no son negativos entonces dibujamos
@@ -60,8 +60,9 @@ void GameMap::draw(sf::RenderWindow& win, int size)
 			//Como son cuadrados solo necesitamos conocer el size de X o Y
 			//Seteamos la posición de donde va a empezar a tomar el tile
 			//Toma el tile completo y luego lo dibuja
-				m_tiles.setPosition(i*size, j*size);
+				m_tiles.setPosition(i*size*4.8, j*size*4.8);
 				m_tiles.setTextureRect(sf::IntRect(m_map[i][j].x*size, m_map[i][j].y*size, size, size));
+				m_tiles.setScale(sf::Vector2f(4.f, 4.8f));
 				win.draw(m_tiles);
 			}
 		}
