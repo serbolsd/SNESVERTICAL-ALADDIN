@@ -1,5 +1,8 @@
 ﻿  GameMap.cpp
-c:\users\ferna\documents\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\gamemap.cpp(63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  main.cpp
-  Generando código...
+c:\users\ferna\documents\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\gamemap.cpp(63): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\ferna\documents\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\gamemap.cpp(64): warning C4244: 'argumento': conversión de 'float' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
   SNESVERTICAL2_0.vcxproj -> C:\Users\ferna\Documents\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe
