@@ -1,5 +1,4 @@
 ﻿  GameMap.cpp
-c:\users\ferna\documents\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\gamemap.cpp(63): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 c:\users\ferna\documents\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\gamemap.cpp(64): warning C4244: 'argumento': conversión de 'float' a 'T'; posible pérdida de datos
           with
           [
