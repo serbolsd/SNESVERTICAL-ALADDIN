@@ -1,5 +1,5 @@
 #pragma once
-#include "RenderManager.h"
+#include "Render.h"
 #include "GameObject.h"
 #include "CCamera.h"
 class SceneManager
