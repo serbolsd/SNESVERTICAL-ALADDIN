@@ -6,7 +6,8 @@ enum typecomponent
 	sprite,
 	physic,
 	parallax,
-	movement
+	movement,
+	gravity
 };
 class GameObject;
 class Component
