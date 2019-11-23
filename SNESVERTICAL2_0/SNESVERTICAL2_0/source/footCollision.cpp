@@ -54,7 +54,7 @@ void footsCollider::update()
 		else
 		{
 			myObject->isGrounded = false;
-			myObject->isjump = true;
+			myObject->isJump = true;
 		}
 	}
 }
