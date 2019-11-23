@@ -1,15 +1,13 @@
 #pragma once
+#include "GraphicApi.h"
 #include "Render.h"
-#include "ResourceManager.h"
-#include "SoundManager.h"
 #include "SceneManager.h"
-#include "parallax.h"
+#include "ResourceManager.h"
 #include "CWindow.h"
 #include "CCamera.h"
 #include <imgui-SFML.h>
 #include <imgui.h>
-#include "Animator.h"
-#include "MoveComponent.h"
+
 class RenderManager
 {
 public:
@@ -22,12 +20,12 @@ public:
 	void imguiAladdinDebug();
 	void imguiParallaxDebug();
 private:
-	GameObject* aladdin;
+	GameObject *aladdin;
 	GameObject *fondo1;
 	GameObject *fondo2;
 	Render renderManager;
-	ResourceManger resourceManager;
-	SoundManager soundManager;
+	ResourceManger resources;
+	//SoundManager soundManager;
 	SceneManager sceneManager;
 	CWindow* window;
 	CCamera* camera;

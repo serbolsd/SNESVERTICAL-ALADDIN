@@ -10,7 +10,6 @@ RenderManager::~RenderManager()
 
 void RenderManager::init()
 {
-	deltaTime = new float(0);
 	//init window
 	window = new CWindow();
 	window->initWindow("parallax", 500, 500);
@@ -20,33 +19,12 @@ void RenderManager::init()
 	camera = new CCamera();
 	camera->initCamera(0, 0,100,100);
 	sceneManager.cam = camera;
-	//animator descriptor
-	AnimatorDesc PathDescriptor;
-	PathDescriptor.RunPath = "resources\\AladdinAnimations\\sprint.png";
-	PathDescriptor.runProportion = sf::Vector2u(11, 1);
-	PathDescriptor.SwingPath = "resources\\AladdinAnimations\\swing.png";
-	PathDescriptor.IdlePath = "resources\\AladdinAnimations\\idle_Pos.png";
-	PathDescriptor.idleProportion = sf::Vector2u(1, 1);
-	//init aladdin
-	aladdin = new Aladdin();
-	aladdin->onInit();
-	aladdin->setPosition(0,30,0);
-	aladdin->deltaTime = deltaTime;
-
-		Animator *AladdinAnimation= new Animator;
-		//init animator
-		AladdinAnimation->Init(PathDescriptor,aladdin->getshape(), 0);
-		Component* castAnimator = AladdinAnimation;
-		//set animator to aladin
-		aladdin->setComponente(castAnimator);
-		//set camera to follow aladdin
-		camera->setObjectFollow(aladdin);
-		//create de move component for aladdin
-		Component* move = new Movement();
-		aladdin->setComponente(move);
-	sceneManager.addObject(aladdin);
+	GraphicApi::loadResources(sceneManager,camera, resources);
+	deltaTime = new float(0);
+	sceneManager.deltaTime = deltaTime;
+	sceneManager.onInit();
 	//init parallax
-	initParallax();
+	//initParallax();
 }
 
 void RenderManager::onUpdate()
@@ -82,8 +60,8 @@ void RenderManager::onUpdate()
 
 		*deltaTime = sf::Time(deltaClock.getElapsedTime()).asSeconds();
 		ImGui::SFML::Update(*window->getWindow(), deltaClock.restart());
-		imguiAladdinDebug();
-		imguiParallaxDebug();
+		//imguiAladdinDebug();
+		//imguiParallaxDebug();
 		//window->getWindow()->draw(shape);
 		window->getWindow()->setView(*camera->getView());
 		ImGui::SFML::Render(*window->getWindow());
@@ -95,49 +73,28 @@ void RenderManager::onUpdate()
 
 void RenderManager::onDelete()
 {
-	//aladdin->onDelete();
-	//delete aladdin;
-	//aladdin = nullptr;
 	delete deltaTime;
 	sceneManager.onDelete();
-	resourceManager.onDelete();
+	//resourceManager.onDelete();
 }
-void RenderManager::imguiAladdinDebug()
-{
-	ImGui::Begin("Aladdin");
-	ImGui::InputFloat("actualspeed", aladdin->actualSpeed);
-	float v[2] = { aladdin->direction.x,aladdin->direction.y};
-	ImGui::InputFloat2("direcction", v);
-	int * id=new int(aladdin->animatorID);
-	ImGui::InputInt("AnimID", id);
-	ImGui::SliderFloat("AnimatedSpeed", aladdin->animatedSpeed, 0, 1);
-	delete id;
-	ImGui::End();
-}
-void RenderManager::imguiParallaxDebug()
-{
-	ImGui::Begin("Parallax");
-	float *f =new float( fondo2->getPosition().z);
-	ImGui::SliderFloat("Z", f,6,400);
-	fondo2->setPosition(fondo2->getPosition().x, fondo2->getPosition().y,*f);
-	delete f;
-	ImGui::End();
-}
-void RenderManager::initParallax()
-{
-	int idtex;
-	fondo1 = new GameObject();
-	sceneManager.addObject(fondo1);
-
-	resourceManager.loadTextures("resources\\Levels\\level1.gif", idtex, sceneManager.gameObjects[fondo1->getID()]->sprite);
-	sceneManager.gameObjects[fondo1->getID()]->setTextureID(idtex);
-	sceneManager.gameObjects[fondo1->getID()]->setPosition(0, 0, 5);
-
-	fondo2 = new GameObject();
-	fondo2->setComponente(new Parallax(aladdin));
-	sceneManager.addObject(fondo2);
-
-	resourceManager.loadTextures("resources\\fondo2.jpg", idtex, sceneManager.gameObjects[fondo2->getID()]->sprite);
-	sceneManager.gameObjects[fondo2->getID()]->setTextureID(idtex);
-	sceneManager.gameObjects[fondo2->getID()]->setPosition(0, -10, 6);
-}
+//void RenderManager::imguiAladdinDebug()
+//{
+//	ImGui::Begin("Aladdin");
+//	ImGui::InputFloat("actualspeed", aladdin->actualSpeed);
+//	float v[2] = { aladdin->direction.x,aladdin->direction.y};
+//	ImGui::InputFloat2("direcction", v);
+//	int * id=new int(aladdin->animatorID);
+//	ImGui::InputInt("AnimID", id);
+//	ImGui::SliderFloat("AnimatedSpeed", aladdin->animatedSpeed, 0, 1);
+//	delete id;
+//	ImGui::End();
+//}
+//void RenderManager::imguiParallaxDebug()
+//{
+//	ImGui::Begin("Parallax");
+//	float *f =new float( fondo2->getPosition().z);
+//	ImGui::SliderFloat("Z", f,6,400);
+//	fondo2->setPosition(fondo2->getPosition().x, fondo2->getPosition().y,*f);
+//	delete f;
+//	ImGui::End();
+//}

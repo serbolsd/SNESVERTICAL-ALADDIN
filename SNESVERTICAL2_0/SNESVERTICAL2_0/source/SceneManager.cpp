@@ -8,6 +8,14 @@ SceneManager::~SceneManager()
 {
 }
 
+void SceneManager::onInit()
+{
+	for (int i = 0; i < gameObjects.size(); i++)
+	{
+		gameObjects[i]->deltaTime = deltaTime;
+	}
+}
+
 void SceneManager::culin(std::vector<GameObject*> &scene)
 {
 	for (int i = 0; i < gameObjects.size(); i++)//revisa cada objeto en la scena
@@ -45,7 +53,7 @@ void SceneManager::onUpdate()
 	{
 		sceneObjects[i]->onUpdate();//se actualiza
 	}
-	RenderManager::render(wind,sceneObjects);//y se pintan
+	Render::render(wind,sceneObjects);//y se pintan
 }
 
 void SceneManager::onDelete()

@@ -7,6 +7,7 @@ class SceneManager
 public:
 	SceneManager();
 	~SceneManager();
+	void onInit();
 	void onUpdate();
 	void onDelete();
 
@@ -15,6 +16,7 @@ public:
 	CCamera* cam;
 	std::vector<GameObject*> gameObjects;
 	int IDmaxObject=0;
+	float *deltaTime;
 private:
 	
 	void culin(std::vector<GameObject*> &scene);
