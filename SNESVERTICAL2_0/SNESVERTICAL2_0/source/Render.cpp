@@ -1,4 +1,5 @@
 #include "../include/Render.h"
+#include "../include/boxCollider.h"
 
 
 Render::Render()
@@ -16,5 +17,9 @@ void Render::render(CWindow *&window, std::vector<GameObject*> objects)
 	{
 		objects[i]->draw(*window->getWindow());
 		//window->getWindow()->draw(objects[i].getshape());
+	}
+	for (size_t i = 0; i < colliders.size(); i++)
+	{
+		colliders[i]->draw(*window->getWindow());
 	}
 }

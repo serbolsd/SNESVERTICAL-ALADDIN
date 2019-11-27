@@ -1,3 +1,4 @@
-﻿  RenderManager.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(26): warning C4018: '<': no coinciden signed/unsigned
+﻿  GraphicApi.cpp
+d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
+d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(36): warning C4018: '<': no coinciden signed/unsigned
   SNESVERTICAL2_0.vcxproj -> D:\UNIVERSIDAD\PPA ALADDIN\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe

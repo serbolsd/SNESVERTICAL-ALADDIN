@@ -69,15 +69,18 @@ public:
 	sf::Vector2f direction;// the direction of the object move
 	float *deltaTime;//the global time
 	float *fallTime;//the time it has been falling
+	float *grabbedTime;//the time it has been falling
 	float *animationTime;//the current time of the animation on this object
 	int animatorID = 0;//the id of the actual animation
 	bool isGrabbed = false;// if grabbed is true
+	bool disGrabbed = false;// if isnt grabbed is true, this is for time whit it can grabbed again
 	bool isJump = false;// if grabbed is true
 	bool isBalancing= false;// if balacing is true
 	bool isjumpBPressed = false;// if the buton for jump is hold press
 	bool isGrounded = false;// if it if gorunded is true
 	bool isRun = false;// if is run is true
 	bool isPlane = false;// if isPlane is true, this is for change the force of the falling
+	bool haveParachute = false;//if have parachute
 	bool isIdle = false;
 	bool isMove = false;
 	bool isThrow = false;

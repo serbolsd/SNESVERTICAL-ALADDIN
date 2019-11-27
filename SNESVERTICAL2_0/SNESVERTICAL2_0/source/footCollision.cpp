@@ -1,13 +1,23 @@
 #include "../include/footCollision.h"
 #include "../include/GameObject.h"
+#include <iostream>
 footsCollider::footsCollider()
 {
+	typecolli = FOOTCOLLIDER;
 	boxColl = new sf::RectangleShape(sf::Vector2f(10,10));//default size of box
+	boxColl->setFillColor(sf::Color::Transparent);
+	boxColl->setOutlineColor(sf::Color::Yellow);
+	boxColl->setOutlineThickness(2);
 }
 
 footsCollider::footsCollider(float sizeX, float sizeY)
 {
-	boxColl = new sf::RectangleShape(sf::Vector2f(10, 10));//custom size of box
+	typecolli = FOOTCOLLIDER;
+	boxColl = new sf::RectangleShape(sf::Vector2f(sizeX, sizeY));//custom size of box
+	boxColl->setOrigin(sizeX/2,sizeY);
+	boxColl->setFillColor(sf::Color::Transparent);
+	boxColl->setOutlineColor(sf::Color::Yellow);
+	boxColl->setOutlineThickness(2);
 }
 
 footsCollider::~footsCollider()
@@ -16,30 +26,32 @@ footsCollider::~footsCollider()
 
 void footsCollider::update()
 {
-	this->boxColl->setPosition(sf::Vector2f(myObject->position->x, myObject->position->y));
+	boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y-4)));
+	
 	for (size_t i = 0; i < colliders.size(); i++)
 	{
-		if (this== colliders[i])
+		boxCollider* checkbox = colliders[i];
+		if (this== checkbox)
 		{
 			continue;
 		}
-		if (this->boxColl->getGlobalBounds().intersects(colliders[i]->getBox()->getGlobalBounds()))
+		if (boxColl->getGlobalBounds().intersects(checkbox->getBox()->getGlobalBounds()))
 		{
-			if (colliders[i]->getType() == JUMPERCOLLIDER)
+			if (checkbox->getType() == JUMPERCOLLIDER)
 			{
 			    
 				*myObject->fallTime = 0;
 				*myObject->currentJumpForce = *myObject->JumpForce;
 				myObject->canPressForForce = true;
 				myObject->timeToPress = 0;
-
+	
 			}
-			else if (colliders[i]->getType() == FLOOTCOLLIDER)
+			else if (checkbox->getType() == FLOOTCOLLIDER)
 			{
 				
-				if (this->boxColl->getPosition().y > (colliders[i]->getBox()->getPosition().y - (colliders[i]->getBox()->getSize().y / 2)) - 1)
+				if (this->boxColl->getPosition().y > (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y)) + 1)
 				{
-					myObject->position->y = (colliders[i]->getBox()->getPosition().y - (colliders[i]->getBox()->getSize().y / 2));
+					
 					//position->y *= -1;
 				}
 				myObject->isGrounded= true;
@@ -47,9 +59,13 @@ void footsCollider::update()
 				{
 					myObject->isJump = false;
 				}
+				//float ypos = (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y));
+				float ypos = (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y));
+				boxColl->setPosition(sf::Vector2f(myObject->position->x, ypos));
+				myObject->position->y = boxColl->getPosition().y + 4;
 				return;
 			}
-
+	
 		}
 		else
 		{

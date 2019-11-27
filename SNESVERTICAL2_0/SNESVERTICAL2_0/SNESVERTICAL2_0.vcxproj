@@ -154,6 +154,7 @@
     <ClInclude Include="include\GravityAladdin.h" />
     <ClInclude Include="include\HeadCollision.h" />
     <ClInclude Include="include\InputManager.h" />
+    <ClInclude Include="include\Quad.h" />
     <ClInclude Include="include\RenderManager.h" />
     <ClInclude Include="include\MoveComponent.h" />
     <ClInclude Include="include\parallax.h" />

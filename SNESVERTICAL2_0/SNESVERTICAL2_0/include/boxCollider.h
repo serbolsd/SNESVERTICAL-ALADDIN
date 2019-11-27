@@ -1,9 +1,7 @@
 #pragma once
-
 #include "component.h"
 #include <SFML/Graphics.hpp>
-
-enum COLLIDERYPE
+enum COLLIDERTYPE
 {
 	UNKNOWCOLLIDER = 0,
 	FLOOTCOLLIDER,
@@ -17,16 +15,21 @@ enum COLLIDERYPE
 class boxCollider : public Component
 {
 public:
-	boxCollider() {};
+	boxCollider() ;
 	~boxCollider() {};
 	void setCenter(float posX,float posY);//for change de pivot position
 	void setSize(float sizeX,float sizeY);//for change the size of the box
-	COLLIDERYPE getType() { return type; };
+	void setType(COLLIDERTYPE typeCollider = UNKNOWCOLLIDER) 
+	{ 
+		typecolli = typeCollider; 
+	};//para definir el tipo de colision
+	void update() override;
+	void draw(sf::RenderWindow &wind);
+	COLLIDERTYPE getType() { return typecolli; };
 	sf::RectangleShape* getBox() { return boxColl; };
 protected:
 	sf::RectangleShape* boxColl=nullptr;// box Collider
-	COLLIDERYPE type = UNKNOWCOLLIDER;//the type of the collision
-
+	COLLIDERTYPE typecolli = UNKNOWCOLLIDER;//the type of the collision
 };
 
-std::vector<boxCollider*> colliders;
+extern std::vector<boxCollider*> colliders;

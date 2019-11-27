@@ -63,6 +63,7 @@ void SceneManager::onDelete()
 		if (gameObjects[i]!=nullptr)
 		{
 			delete gameObjects[i];
+			gameObjects[i] = nullptr;
 		}
 	}
 }

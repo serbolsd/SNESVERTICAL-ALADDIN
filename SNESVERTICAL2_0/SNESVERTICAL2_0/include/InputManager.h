@@ -1,5 +1,6 @@
 #pragma once
 #include "Aladdin.h"
+#include <iostream>
 class InputManager
 {
 public:
@@ -90,7 +91,7 @@ inline void InputManager::keyboard(Aladdin & player)
 		if (!player.isjumpBPressed)//si ya se esta saltando no se vuelve a aplicar 
 		{
 			player.animatorID = 5;
-			player.isjump = true;
+			player.isJump = true;
 			player.isGrounded = false;
 		}
 		player.isjumpBPressed = true;
@@ -99,7 +100,7 @@ inline void InputManager::keyboard(Aladdin & player)
 	{
 		player.isjumpBPressed = false;
 	}
-	if (player.isjump)
+	if (player.isJump)
 	{
 		if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::A))//veo si se presiona el boton de planear
 		{
@@ -141,10 +142,26 @@ inline void InputManager::controller(Aladdin & player)
 			sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::X) / 100,
 			0
 		};
+		if (player.direction.x<1)
+		{
+			player.animatorID = 1;
+		}
+		else
+		{
+			player.animatorID = 2;
+		}
 		if (sf::Joystick::isButtonPressed(player.IndexControl, 3))//veo si se presiona el boton de correr
 		{
 			player.isRun = true;//si lo hace cambia a verdadero
 			*player.actualSpeed = *player.speedRun;
+			if(player.animatorID == 1)
+			{
+				player.animatorID = 3;
+			}
+			else
+			{
+				player.animatorID = 4;
+			}
 		}
 		else
 		{
@@ -154,6 +171,7 @@ inline void InputManager::controller(Aladdin & player)
 	}
 	else
 	{
+		player.animatorID = 0;
 		*player.actualSpeed = 0;
 		player.isMove = false;
 		player.isRun = false;//si no, es falso
@@ -162,36 +180,87 @@ inline void InputManager::controller(Aladdin & player)
 	{
 		if (!player.isjumpBPressed)//si ya se esta saltando no se vuelve a aplicar 
 		{
-			player.isjump = true;
+			player.animatorID = 5;
+			player.isJump = true;
 			player.isGrounded = false;
+			player.isjumpBPressed = true;
+			*player.currentJumpForce = *player.JumpForce;
 		}
-		player.isjumpBPressed = true;
+		if (player.canPressForForce)
+		{
+			player.timeToPress = *player.fallTime;
+			if (player.timeToPress > 8)
+			{
+				player.canPressForForce = false;
+			}
+			else
+			{
+				player.isjumpBPressed = true;
+			}
+		}
+		
 	}
 	else
 	{
 		player.isjumpBPressed = false;
 	}
-	if (player.isjump)
+	if (player.isJump)
 	{
-		if (sf::Joystick::isButtonPressed(player.IndexControl, 5))//veo si se presiona el boton de planear
+		player.animatorID = 5;
+		if (player.isjumpBPressed)
 		{
-			player.isPlane = true;
+			if (*player.currentJumpForce > *player.JumpForce * 2)
+			{
+				*player.currentJumpForce = *player.JumpForce * 2;
+			}
+			*player.currentJumpForce += 0.3;
 		}
-		else
+		*player.fallTime += *player.deltaTime;
+		if (player.haveParachute)
 		{
-			player.isPlane = false;
+			if (sf::Joystick::isButtonPressed(player.IndexControl, 5))//veo si se presiona el boton de planear
+			{
+				player.isPlane = true;
+			}
+			else
+			{
+				player.isPlane = false;
+			}
 		}
+
 	}
 	if (sf::Joystick::isButtonPressed(player.IndexControl, 1))//veo si se presiona el boton de lanzar
 	{
+		player.animatorID = 7;
 		player.isThrow = true;
 	}
-	if (sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::Y) < -10)//veo si se esta agachando
+	float axisy = sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::Y);
+	std::cout << axisy << std::endl;
+	system("cls");
+	if (sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::Y) > 10)//veo si se esta agachando
 	{
+		if (player.isGrabbed)
+		{
+			player.disGrabbed = true;
+			*player.fallTime = 0;
+			player.isGrabbed = false;
+			player.shape->setRotation(0);
+			player.isBalancing = false;
+		}
+		player.animatorID = 8;
 		player.isCrouched = true;
 	}
 	else
 	{
 		player.isCrouched = false;
+	}
+	if (player.disGrabbed)
+	{
+		*player.grabbedTime += *player.deltaTime;
+		if (*player.grabbedTime > 0.20)
+		{
+			player.disGrabbed=false;
+			*player.grabbedTime = 0;
+		}
 	}
 }

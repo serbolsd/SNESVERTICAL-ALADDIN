@@ -2,12 +2,20 @@
 #include "../include/GameObject.h"
 headCollider::headCollider()
 {
+	typecolli = HEADCOLLIDER;
 	boxColl = new sf::RectangleShape(sf::Vector2f(10, 10));//default size of box
+	boxColl->setFillColor(sf::Color::Transparent);
+	boxColl->setOutlineColor(sf::Color::Red);
+	boxColl->setOutlineThickness(2);
 }
 
 headCollider::headCollider(float sizeX, float sizeY)
 {
+	typecolli = HEADCOLLIDER;
 	boxColl = new sf::RectangleShape(sf::Vector2f(sizeX, sizeY));//default size of box
+	boxColl->setFillColor(sf::Color::Transparent);
+	boxColl->setOutlineColor(sf::Color::Red);
+	boxColl->setOutlineThickness(2);
 }
 
 headCollider::~headCollider()
@@ -16,24 +24,30 @@ headCollider::~headCollider()
 
 void headCollider::update()
 {
-	this->boxColl->setPosition(sf::Vector2f(myObject->position->x, myObject->position->y));
-	if (myObject->isGrounded)
+	this->boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y-25)));
+	if (myObject->isGrounded|| myObject->disGrabbed)
 	{
 		return;
 	}
-	for (size_t i = 0; i < colliders.size(); i++)
+	for (int i = 0; i < colliders.size(); i++)
 	{
-		if (this->boxColl->getGlobalBounds().intersects(colliders[i]->getBox()->getGlobalBounds()))
+		boxCollider* checkbox = colliders[i];
+		if (this == checkbox)
 		{
-			if (colliders[i]->getType() == CORNICECOLLIDER)
+			continue;
+		}
+		if (boxColl->getGlobalBounds().intersects(checkbox->getBox()->getGlobalBounds()))
+		{
+			if (checkbox->getType() == CORNICECOLLIDER)
 			{
 				*myObject->fallTime = 0;
 				*myObject->currentJumpForce = 0;
 				myObject->isGrabbed = true;
-				myObject->position->x = colliders[i]->getBox.getPosition().x;
-				myObject->position->y = -(colliders[i]->getBox.getPosition().y + 17.5);
+				boxColl->setPosition(checkbox->getBox()->getPosition());
+				myObject->position->x = boxColl->getPosition().x;
+				myObject->position->y = (boxColl->getPosition().y +25);
 			}
-			else if (colliders[i]->getType() == BALANCERCOLLIDER)
+			else if (checkbox->getType() == BALANCERCOLLIDER)
 			{
 				if (!myObject->isGrabbed)
 				{
@@ -41,8 +55,8 @@ void headCollider::update()
 					*myObject->currentJumpForce = 0;
 					myObject->isGrabbed = true;
 					myObject->isBalancing = true;
-					myObject->position->x = colliders[i]->getBox.getPosition().x;
-					myObject->position->y = -(colliders[i]->getBox.getPosition().y + 17.5);
+					myObject->position->x = checkbox->getBox()->getPosition().x;
+					myObject->position->y = -(checkbox->getBox()->getPosition().y + 17.5);
 				}
 			}
 		}

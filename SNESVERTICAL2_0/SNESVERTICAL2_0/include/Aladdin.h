@@ -13,11 +13,6 @@ public:
 	int IndexControl = -1;
 	//State* state = nullptr;
 	sf::CircleShape *circuShape=new sf::CircleShape(50,50);
-
-	float* currentJumpForce;
-	float* JumpForce;
-	float* ParachuteForce;
-	float* currentParachuteForce;
 	
 private:
 

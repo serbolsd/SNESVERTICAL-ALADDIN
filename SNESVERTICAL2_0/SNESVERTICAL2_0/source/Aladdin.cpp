@@ -30,16 +30,31 @@ void Aladdin::onInit()
 	speedRun = new float(1.5);
 	speedJump = new float(10);
 	speedPlane = new float(10);
+	JumpForce = new float(5);
+	ParachuteForce = new float(7.37);
+	currentJumpForce = new float(0);
+	currentParachuteForce = new float(0);
 	setPosition(0, -50, 0);
 	shape = new sf::RectangleShape(sf::Vector2f(5,5));
-	shape->setOrigin(2.5,2.5);
+	shape->setOrigin(2.5,4);
 	shape->scale(12,12);
 	shape->setPosition(position->x,position->y);
+	isJump = true;
+	fallTime = new float(0);
+	grabbedTime = new float(0);
+	IndexControl = 0;
 }
 
 void Aladdin::onUpdate()
 {
-	
+	if (isJump)
+	{
+		*fallTime += *deltaTime;
+	}
+	else
+	{
+		*fallTime = 0;
+	}
 	InputManager::OnUpdate(*this);
 	for (int i = 0; i < components.size(); i++)
 	{
@@ -61,4 +76,11 @@ void Aladdin::onDelete()
 	delete speedRun;
 	delete speedJump;
 	delete speedPlane;
+	delete shape;
+	delete currentJumpForce;
+	delete JumpForce;
+	delete ParachuteForce;
+	delete currentParachuteForce;
+	delete fallTime;
+	delete grabbedTime;
 }

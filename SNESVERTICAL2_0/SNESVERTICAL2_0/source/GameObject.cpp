@@ -1,6 +1,6 @@
 #include "../include/GameObject.h"
 #include <iostream>
-
+#include "../include/boxCollider.h"
 
 void GameObject::onDelete()
 {
@@ -49,10 +49,33 @@ void GameObject::setComponente(Component *newcomponent)
 	{
 		if (components[i]->type == newcomponent->type)//si encuentra que el componente ya existe no se agrega
 		{
-			//se manda un mensaje de que ya existe y se retorna la funcion
-			std::cout << "the componet already exists" << std::endl;
-			return;
+			if (newcomponent->type==collider)
+			{
+				boxCollider* box1 = dynamic_cast<boxCollider*> (components[i]);
+				boxCollider* box2 = dynamic_cast<boxCollider*> (newcomponent);
+				if (box1->getType()==box2->getType())
+				{
+					//se manda un mensaje de que ya existe y se retorna la funcion
+					std::cout << "the collider is already exists" << std::endl;
+					return;
+				}
+				else
+				{
+					continue;
+				}
+			}
+			else
+			{
+				//se manda un mensaje de que ya existe y se retorna la funcion
+				std::cout << "the componet is already exists" << std::endl;
+				return;
+			}
 		}
+	}
+	if (newcomponent->type==collider)
+	{
+		boxCollider* box2 = dynamic_cast<boxCollider*>(newcomponent);
+		colliders.push_back(box2);
 	}
 	newcomponent->myObject = this;
 	//si no se encuentra su existencia se agrega

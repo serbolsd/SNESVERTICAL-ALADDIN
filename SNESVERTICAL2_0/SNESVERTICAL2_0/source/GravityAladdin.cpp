@@ -13,10 +13,10 @@ void GravityAladdin::update()
 		*aladdin->currentJumpForce = 0;
 		if (!aladdin->isSwinging)
 		{
-			*aladdin->deltaTime = 0;
+			*aladdin->fallTime = 0;
 		}
 		return;
 	}
-	float vy = *aladdin->currentJumpForce - ((GRAVITYFORCE - *aladdin->currentParachuteForce)* *aladdin->deltaTime);
-	aladdin->position->y += vy;
+	float vy = *aladdin->currentJumpForce - ((GRAVITYFORCE - *aladdin->currentParachuteForce)* *aladdin->fallTime);
+	aladdin->position->y -= vy;
 }
