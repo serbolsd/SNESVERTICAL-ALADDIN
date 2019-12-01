@@ -65,6 +65,18 @@ void footsCollider::update()
 				myObject->position->y = boxColl->getPosition().y + 4;
 				return;
 			}
+			else if (checkbox->getType() == WALLCOLLIDER)
+			{
+				if (this->boxColl->getPosition().x > checkbox->getBox()->getPosition().x)
+				{
+
+				}
+				else
+				{
+
+				}
+				return;
+			}
 	
 		}
 		else

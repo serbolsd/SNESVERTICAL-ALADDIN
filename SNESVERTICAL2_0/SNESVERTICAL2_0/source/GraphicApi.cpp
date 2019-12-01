@@ -86,7 +86,7 @@ void GraphicApi::loadResources(SceneManager &sceneManager, CCamera*camera, Resou
 
 	QUAD* cornice1 = new QUAD(2, 2);
 		cornice1->setFillColor(sf::Color::Blue);
-		cornice1->setPosition(-20, 15, 1);
+		cornice1->setPosition(-20, 18, 1);
 	GameObject* quad = cornice1;
 	boxCollider* cornicecoll1 = new boxCollider();
 		cornicecoll1->setSize(2,2);
@@ -97,7 +97,7 @@ void GraphicApi::loadResources(SceneManager &sceneManager, CCamera*camera, Resou
 
 	QUAD* cornice2 = new QUAD(2, 2);
 		cornice2->setFillColor(sf::Color::Blue);
-		cornice2->setPosition(60, 15, 1);
+		cornice2->setPosition(60, 18, 1);
 	quad = cornice2;
 	boxCollider* cornicecoll2 = new boxCollider();
 		cornicecoll2->setSize(2, 2);

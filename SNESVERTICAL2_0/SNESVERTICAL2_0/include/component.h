@@ -16,6 +16,7 @@ public:
 	Component();
 	virtual ~Component();
 	virtual void update() {};
+	virtual void onDelete() {};
 	typecomponent type = unknow;
 	GameObject* myObject;
 	int ID;

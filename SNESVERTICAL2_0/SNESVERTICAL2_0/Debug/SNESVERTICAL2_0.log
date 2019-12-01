@@ -1,4 +1,14 @@
-﻿  GraphicApi.cpp
+﻿  GameObject.cpp
 d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(36): warning C4018: '<': no coinciden signed/unsigned
+d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\gameobject.cpp(8): warning C4018: '<': no coinciden signed/unsigned
+d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\gameobject.cpp(73): warning C4018: '<': no coinciden signed/unsigned
+d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\gameobject.cpp(105): warning C4018: '<': no coinciden signed/unsigned
+  GraphicApi.cpp
+d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
+d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(38): warning C4018: '<': no coinciden signed/unsigned
+d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(46): warning C4018: '<': no coinciden signed/unsigned
+  InvisibleObject.cpp
+d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
+d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\invisibleobject.cpp(25): warning C4018: '<': no coinciden signed/unsigned
+  Generando código...
   SNESVERTICAL2_0.vcxproj -> D:\UNIVERSIDAD\PPA ALADDIN\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe

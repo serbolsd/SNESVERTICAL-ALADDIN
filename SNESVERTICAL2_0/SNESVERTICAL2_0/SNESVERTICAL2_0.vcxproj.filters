@@ -22,6 +22,12 @@
     <Filter Include="Archivos de encabezado\TestObjects">
       <UniqueIdentifier>{0b2fd04b-94b5-410f-814a-c4a0f41ec7f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Objects">
+      <UniqueIdentifier>{cb9120d6-482c-4767-b61f-0e9ab318a28e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Objects">
+      <UniqueIdentifier>{82be8493-1d08-4fce-b68f-c070ae94caf1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -79,6 +85,12 @@
       <Filter>Archivos de origen\Components</Filter>
     </ClCompile>
     <ClCompile Include="source\HeadCollision.cpp">
+      <Filter>Archivos de origen\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="source\InvisibleObject.cpp">
+      <Filter>Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WallCollider.cpp">
       <Filter>Archivos de origen\Components</Filter>
     </ClCompile>
   </ItemGroup>
@@ -145,6 +157,15 @@
     </ClInclude>
     <ClInclude Include="include\Quad.h">
       <Filter>Archivos de encabezado\TestObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InvisibleObject.h">
+      <Filter>Archivos de encabezado\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WallCollider.h">
+      <Filter>Archivos de encabezado\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Enemy.h">
+      <Filter>Archivos de encabezado\Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

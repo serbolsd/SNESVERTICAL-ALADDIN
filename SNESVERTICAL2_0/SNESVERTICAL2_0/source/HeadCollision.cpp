@@ -24,7 +24,7 @@ headCollider::~headCollider()
 
 void headCollider::update()
 {
-	this->boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y-25)));
+	this->boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y-22)));
 	if (myObject->isGrounded|| myObject->disGrabbed)
 	{
 		return;
@@ -45,7 +45,7 @@ void headCollider::update()
 				myObject->isGrabbed = true;
 				boxColl->setPosition(checkbox->getBox()->getPosition());
 				myObject->position->x = boxColl->getPosition().x;
-				myObject->position->y = (boxColl->getPosition().y +25);
+				myObject->position->y = (boxColl->getPosition().y +22);
 			}
 			else if (checkbox->getType() == BALANCERCOLLIDER)
 			{

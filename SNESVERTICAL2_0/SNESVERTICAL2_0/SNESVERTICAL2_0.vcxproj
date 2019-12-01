@@ -132,6 +132,7 @@
     <ClCompile Include="source\GraphicApi.cpp" />
     <ClCompile Include="source\GravityAladdin.cpp" />
     <ClCompile Include="source\HeadCollision.cpp" />
+    <ClCompile Include="source\InvisibleObject.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\RenderManager.cpp" />
     <ClCompile Include="source\parallax.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="source\ResourceManager.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\SoundManager.cpp" />
+    <ClCompile Include="source\WallCollider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Aladdin.h" />
@@ -148,12 +150,14 @@
     <ClInclude Include="include\CCamera.h" />
     <ClInclude Include="include\component.h" />
     <ClInclude Include="include\CWindow.h" />
+    <ClInclude Include="include\Enemy.h" />
     <ClInclude Include="include\footCollision.h" />
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\GraphicApi.h" />
     <ClInclude Include="include\GravityAladdin.h" />
     <ClInclude Include="include\HeadCollision.h" />
     <ClInclude Include="include\InputManager.h" />
+    <ClInclude Include="include\InvisibleObject.h" />
     <ClInclude Include="include\Quad.h" />
     <ClInclude Include="include\RenderManager.h" />
     <ClInclude Include="include\MoveComponent.h" />
@@ -162,6 +166,7 @@
     <ClInclude Include="include\ResourceManager.h" />
     <ClInclude Include="include\SceneManager.h" />
     <ClInclude Include="include\SoundManager.h" />
+    <ClInclude Include="include\WallCollider.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

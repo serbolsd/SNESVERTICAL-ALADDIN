@@ -5,6 +5,7 @@ enum COLLIDERTYPE
 {
 	UNKNOWCOLLIDER = 0,
 	FLOOTCOLLIDER,
+	WALLCOLLIDER,
 	CORNICECOLLIDER,
 	BALANCERCOLLIDER,
 	HITBOXCOLLIDER,
@@ -27,9 +28,11 @@ public:
 	void draw(sf::RenderWindow &wind);
 	COLLIDERTYPE getType() { return typecolli; };
 	sf::RectangleShape* getBox() { return boxColl; };
+	void onDelete() override;
 protected:
 	sf::RectangleShape* boxColl=nullptr;// box Collider
 	COLLIDERTYPE typecolli = UNKNOWCOLLIDER;//the type of the collision
 };
 
 extern std::vector<boxCollider*> colliders;
+extern boxCollider* AladdinHitbox;

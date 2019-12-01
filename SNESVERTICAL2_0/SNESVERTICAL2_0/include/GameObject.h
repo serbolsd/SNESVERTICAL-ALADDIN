@@ -34,7 +34,7 @@ public:
 		sprite.setPosition(position->x, position->y);
 		wind.draw(sprite);
 	};
-	void onDelete();
+	virtual void onDelete();
 	//this function is for add a new component
 	void setComponente(Component*);
 	//you call this function with the type of component you want

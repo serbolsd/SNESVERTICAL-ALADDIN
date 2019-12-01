@@ -1,6 +1,7 @@
 #include "../include/boxCollider.h"
 #include "../include/GameObject.h"
 std::vector<boxCollider*> colliders;
+boxCollider* AladdinHitbox;
 boxCollider::boxCollider()
 {
 	type = collider; 
@@ -39,4 +40,12 @@ void boxCollider::update()
 void boxCollider::draw(sf::RenderWindow &wind)
 {
 	wind.draw(*boxColl);
+}
+
+void boxCollider::onDelete()
+{
+	if (boxColl!=nullptr)
+	{
+		delete boxColl;
+	}
 }
