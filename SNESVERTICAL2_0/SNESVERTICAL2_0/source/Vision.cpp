@@ -16,7 +16,7 @@ void Vision::init()
 }
 
 void Vision::Delete()
-{
+{ 
 	delete CollisionBox;
 }
 
