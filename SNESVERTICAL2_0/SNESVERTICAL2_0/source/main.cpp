@@ -13,5 +13,4 @@ int main()
 #elif EDITOR
 #endif
 	play.onDelete();
-
 }

@@ -1,10 +1,133 @@
-﻿  GraphicApi.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(38): warning C4018: '<': no coinciden signed/unsigned
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(46): warning C4018: '<': no coinciden signed/unsigned
-  RenderManager.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
+﻿  Aladdin.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\InputManager.h(216,35): warning C4305:  '+=': truncamiento de 'double' a 'float'
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Aladdin.cpp(34,34): warning C4305:  'inicializando': truncamiento de 'double' a 'float'
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Aladdin.cpp(59,20): warning C4018:  '<': no coinciden signed/unsigned
+  Animation.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Aladdin.cpp(73,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(10,40): warning C4244:  '=': conversión de 'float' a 'T'; posible pérdida de datos
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(10,40): warning C4244:         with
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(10,40): warning C4244:         [
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(10,40): warning C4244:             T=int
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(10,40): warning C4244:         ]
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(11,41): warning C4244:  '=': conversión de 'float' a 'T'; posible pérdida de datos
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(11,41): warning C4244:         with
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(11,41): warning C4244:         [
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(11,41): warning C4244:             T=int
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(11,41): warning C4244:         ]
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(26,40): warning C4244:  '=': conversión de 'float' a 'T'; posible pérdida de datos
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(26,40): warning C4244:         with
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(26,40): warning C4244:         [
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(26,40): warning C4244:             T=int
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(26,40): warning C4244:         ]
+  Animator.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(27,41): warning C4244:  '=': conversión de 'float' a 'T'; posible pérdida de datos
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(27,41): warning C4244:         with
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(27,41): warning C4244:         [
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(27,41): warning C4244:             T=int
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animation.cpp(27,41): warning C4244:         ]
+  boxCollider.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+  CCamera.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+  component.cpp
+  CWindow.cpp
+  footCollision.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+  GameMap.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,86): warning C4244:  'argumento': conversión de 'float' a 'T'; posible pérdida de datos
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,86): warning C4244:         with
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,86): warning C4244:         [
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,86): warning C4244:             T=int
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,86): warning C4244:         ]
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,80): warning C4244:  'argumento': conversión de 'float' a 'T'; posible pérdida de datos
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,80): warning C4244:         with
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,80): warning C4244:         [
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,80): warning C4244:             T=int
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,80): warning C4244:         ]
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,73): warning C4244:  'argumento': conversión de 'float' a 'T'; posible pérdida de datos
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,73): warning C4244:         with
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,73): warning C4244:         [
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,73): warning C4244:             T=int
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,73): warning C4244:         ]
+  GameObject.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,53): warning C4244:  'argumento': conversión de 'float' a 'T'; posible pérdida de datos
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,53): warning C4244:         with
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,53): warning C4244:         [
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,53): warning C4244:             T=int
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameMap.cpp(64,53): warning C4244:         ]
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameObject.cpp(8,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameObject.cpp(73,20): warning C4018:  '<': no coinciden signed/unsigned
+  GraphicApi.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GameObject.cpp(105,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\Quad.h(38,20): warning C4018:  '<': no coinciden signed/unsigned
+  GravityAladdin.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\Quad.h(46,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+  HeadCollision.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\GravityAladdin.cpp(21,11): warning C4244:  'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\HeadCollision.cpp(32,20): warning C4018:  '<': no coinciden signed/unsigned
+  InvisibleObject.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\HeadCollision.cpp(59,30): warning C4244:  '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\HeadCollision.cpp(59,30): warning C4244:         with
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\HeadCollision.cpp(59,30): warning C4244:         [
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\HeadCollision.cpp(59,30): warning C4244:             T=float
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\HeadCollision.cpp(59,30): warning C4244:         ]
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+  Jarron.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\InvisibleObject.cpp(25,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Jarron.cpp(17,47): warning C4244:  'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   main.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Jarron.cpp(24,48): warning C4244:  'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  RenderManager.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+  parallax.cpp
+  Render.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+  ResourceManager.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\ResourceManager.cpp(1,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   Generando código...
-  SNESVERTICAL2_0.vcxproj -> D:\UNIVERSIDAD\PPA ALADDIN\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\ResourceManager.cpp(46,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animator.cpp(144): warning C4715:  'Animator::changeAnim': no todas las rutas de acceso de control devuelven un valor
+  Compilando...
+  SceneManager.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\Animator.cpp(43): warning C4715:  'Animator::Init': no todas las rutas de acceso de control devuelven un valor
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\SceneManager.cpp(13,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\SceneManager.cpp(21,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\SceneManager.cpp(33,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\SceneManager.cpp(35,25): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\SceneManager.cpp(52,20): warning C4018:  '<': no coinciden signed/unsigned
+  SoundManager.cpp
+  Vision.cpp
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\source\SceneManager.cpp(61,20): warning C4018:  '<': no coinciden signed/unsigned
+  WallCollider.cpp
+  Generando código...
+C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\SNESVERTICAL2_0\include\GameObject.h(27,21): warning C4018:  '<': no coinciden signed/unsigned
+LINK : warning LNK4217: "?isButtonPressed@Joystick@sf@@SA_NII@Z (public: static bool __cdecl sf::Joystick::isButtonPressed(unsigned int,unsigned int))" importa el símbolo "sfml-window-s-d.lib(Joystick.cpp.obj)" definido en "Aladdin.obj" en la función ""public: static void __cdecl InputManager::controller(class Aladdin &)" (?controller@InputManager@@SAXAAVAladdin@@@Z)"
+LINK : warning LNK4217: "?getAxisPosition@Joystick@sf@@SAMIW4Axis@12@@Z (public: static float __cdecl sf::Joystick::getAxisPosition(unsigned int,enum sf::Joystick::Axis))" importa el símbolo "sfml-window-s-d.lib(Joystick.cpp.obj)" definido en "Aladdin.obj" en la función ""public: static void __cdecl InputManager::controller(class Aladdin &)" (?controller@InputManager@@SAXAAVAladdin@@@Z)"
+LINK : warning LNK4217: "??0String@sf@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVlocale@3@@Z (public: __thiscall sf::String::String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::locale const &))" importa el símbolo "sfml-system-s-d.lib(String.cpp.obj)" definido en "CWindow.obj" en la función ""public: void __thiscall CWindow::initWindow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int const &,int const &,enum WINDOWTYPE const &)" (?initWindow@CWindow@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABH1ABW4WINDOWTYPE@@@Z)"
+LINK : warning LNK4217: "??1String@sf@@QAE@XZ (public: __thiscall sf::String::~String(void))" importa el símbolo "ImGui-SFML.lib(imgui-SFML.obj)" definido en "CWindow.obj" en la función ""public: void __thiscall CWindow::initWindow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int const &,int const &,enum WINDOWTYPE const &)" (?initWindow@CWindow@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABH1ABW4WINDOWTYPE@@@Z)"
+LINK : warning LNK4217: "??0VideoMode@sf@@QAE@III@Z (public: __thiscall sf::VideoMode::VideoMode(unsigned int,unsigned int,unsigned int))" importa el símbolo "sfml-window-s-d.lib(VideoMode.cpp.obj)" definido en "CWindow.obj" en la función ""public: void __thiscall CWindow::initWindow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int const &,int const &,enum WINDOWTYPE const &)" (?initWindow@CWindow@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABH1ABW4WINDOWTYPE@@@Z)"
+LINK : warning LNK4217: "??0Window@sf@@QAE@VVideoMode@1@ABVString@1@IABUContextSettings@1@@Z (public: __thiscall sf::Window::Window(class sf::VideoMode,class sf::String const &,unsigned int,struct sf::ContextSettings const &))" importa el símbolo "sfml-window-s-d.lib(Window.cpp.obj)" definido en "CWindow.obj" en la función ""public: void __thiscall CWindow::initWindow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int const &,int const &,enum WINDOWTYPE const &)" (?initWindow@CWindow@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABH1ABW4WINDOWTYPE@@@Z)"
+LINK : warning LNK4217: "??1Window@sf@@UAE@XZ (public: virtual __thiscall sf::Window::~Window(void))" importa el símbolo "sfml-window-s-d.lib(Window.cpp.obj)" definido en "CWindow.obj" en la función ""public: virtual void * __thiscall sf::Window::`scalar deleting destructor'(unsigned int)" (??_GWindow@sf@@UAEPAXI@Z)"
+LINK : warning LNK4217: "?close@Window@sf@@QAEXXZ (public: void __thiscall sf::Window::close(void))" importa el símbolo "sfml-window-s-d.lib(Window.cpp.obj)" definido en "CWindow.obj" en la función ""public: void __thiscall CWindow::closeWindow(void)" (?closeWindow@CWindow@@QAEXXZ)"
+LINK : warning LNK4217: "?close@Window@sf@@QAEXXZ (public: void __thiscall sf::Window::close(void))" importa el símbolo "sfml-window-s-d.lib(Window.cpp.obj)" definido en "RenderManager.obj" en la función ""public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)"
+LINK : warning LNK4217: "?isOpen@Window@sf@@QBE_NXZ (public: bool __thiscall sf::Window::isOpen(void)const )" importa el símbolo "sfml-window-s-d.lib(Window.cpp.obj)" definido en "CWindow.obj" en la función ""public: bool __thiscall CWindow::onUpdateHandleW(void)" (?onUpdateHandleW@CWindow@@QAE_NXZ)"
+LINK : warning LNK4217: "?isOpen@Window@sf@@QBE_NXZ (public: bool __thiscall sf::Window::isOpen(void)const )" importa el símbolo "sfml-window-s-d.lib(Window.cpp.obj)" definido en "RenderManager.obj" en la función ""public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)"
+LINK : warning LNK4217: "?pollEvent@Window@sf@@QAE_NAAVEvent@2@@Z (public: bool __thiscall sf::Window::pollEvent(class sf::Event &))" importa el símbolo "sfml-window-s-d.lib(Window.cpp.obj)" definido en "CWindow.obj" en la función ""public: bool __thiscall CWindow::onUpdateHandleW(void)" (?onUpdateHandleW@CWindow@@QAE_NXZ)"
+LINK : warning LNK4217: "?pollEvent@Window@sf@@QAE_NAAVEvent@2@@Z (public: bool __thiscall sf::Window::pollEvent(class sf::Event &))" importa el símbolo "sfml-window-s-d.lib(Window.cpp.obj)" definido en "RenderManager.obj" en la función ""public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)"
+LINK : warning LNK4217: "?asSeconds@Time@sf@@QBEMXZ (public: float __thiscall sf::Time::asSeconds(void)const )" importa el símbolo "sfml-system-s-d.lib(Time.cpp.obj)" definido en "RenderManager.obj" en la función ""public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)"
+LINK : warning LNK4217: "??0Clock@sf@@QAE@XZ (public: __thiscall sf::Clock::Clock(void))" importa el símbolo "sfml-system-s-d.lib(Clock.cpp.obj)" definido en "RenderManager.obj" en la función ""public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)"
+LINK : warning LNK4217: "?getElapsedTime@Clock@sf@@QBE?AVTime@2@XZ (public: class sf::Time __thiscall sf::Clock::getElapsedTime(void)const )" importa el símbolo "sfml-system-s-d.lib(Clock.cpp.obj)" definido en "RenderManager.obj" en la función ""public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)"
+LINK : warning LNK4217: "?restart@Clock@sf@@QAE?AVTime@2@XZ (public: class sf::Time __thiscall sf::Clock::restart(void))" importa el símbolo "sfml-system-s-d.lib(Clock.cpp.obj)" definido en "RenderManager.obj" en la función ""public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)"
+LINK : warning LNK4217: "?setSize@Window@sf@@QAEXABV?$Vector2@I@2@@Z (public: void __thiscall sf::Window::setSize(class sf::Vector2<unsigned int> const &))" importa el símbolo "sfml-window-s-d.lib(Window.cpp.obj)" definido en "RenderManager.obj" en la función ""public: void __thiscall RenderManager::init(void)" (?init@RenderManager@@QAEXXZ)"
+LINK : warning LNK4217: "?setFramerateLimit@Window@sf@@QAEXI@Z (public: void __thiscall sf::Window::setFramerateLimit(unsigned int))" importa el símbolo "sfml-window-s-d.lib(Window.cpp.obj)" definido en "RenderManager.obj" en la función ""public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)"
+LINK : warning LNK4217: "?display@Window@sf@@QAEXXZ (public: void __thiscall sf::Window::display(void))" importa el símbolo "sfml-window-s-d.lib(Window.cpp.obj)" definido en "RenderManager.obj" en la función ""public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)"
+  SNESVERTICAL2_0.vcxproj -> C:\Users\Chong\Documents\Cuarto Cuatrimestre\PPA\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe
