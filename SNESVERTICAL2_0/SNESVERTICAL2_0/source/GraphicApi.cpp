@@ -105,4 +105,26 @@ void GraphicApi::loadResources(SceneManager &sceneManager, CCamera*camera, Resou
 	quadCollider = cornicecoll2;
 	quad->setComponente(quadCollider);
 	sceneManager.addObject(quad);
+
+	QUAD* wall1 = new QUAD(20, 50);
+	wall1->setFillColor(sf::Color::Yellow);
+	wall1->setPosition(-40, 80, 0);
+	GameObject* wall = wall1;
+	boxCollider* wallCollider1 = new boxCollider();
+	wallCollider1->setSize(20, 50);
+	wallCollider1->setType(COLLIDERTYPE::WALLCOLLIDER);
+	Component* wallCollider = wallCollider1;
+	wall->setComponente(wallCollider);
+	sceneManager.addObject(wall);
+
+	QUAD* wall2 = new QUAD(20, 50);
+	wall2->setFillColor(sf::Color::Yellow);
+	wall2->setPosition(40, 80, 0);
+	wall = wall2;
+	boxCollider* wallCollider2 = new boxCollider();
+	wallCollider2->setSize(20, 50);
+	wallCollider2->setType(COLLIDERTYPE::WALLCOLLIDER);
+	wallCollider = wallCollider2;
+	wall->setComponente(wallCollider);
+	sceneManager.addObject(wall);
 }

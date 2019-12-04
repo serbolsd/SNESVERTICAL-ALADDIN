@@ -1,64 +1,10 @@
-﻿  Aladdin.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\inputmanager.h(216): warning C4305: '+=': truncamiento de 'double' a 'float'
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\aladdin.cpp(34): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\aladdin.cpp(59): warning C4018: '<': no coinciden signed/unsigned
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\aladdin.cpp(73): warning C4018: '<': no coinciden signed/unsigned
-  Animator.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
-  boxCollider.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
-  footCollision.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
-  GraphicApi.cpp
+﻿  GraphicApi.cpp
 d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
 d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(38): warning C4018: '<': no coinciden signed/unsigned
 d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(46): warning C4018: '<': no coinciden signed/unsigned
-  GravityAladdin.cpp
+  RenderManager.cpp
 d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\gravityaladdin.cpp(20): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-  HeadCollision.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\headcollision.cpp(32): warning C4018: '<': no coinciden signed/unsigned
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\headcollision.cpp(59): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
-          with
-          [
-              T=float
-          ]
-  InvisibleObject.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\invisibleobject.cpp(25): warning C4018: '<': no coinciden signed/unsigned
   main.cpp
 d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
-  parallax.cpp
-  Render.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(27): warning C4018: '<': no coinciden signed/unsigned
-  ResourceManager.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\resourcemanager.cpp(1): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\resourcemanager.cpp(46): warning C4018: '<': no coinciden signed/unsigned
-  WallCollider.cpp
   Generando código...
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\animator.cpp(43): warning C4715: 'Animator::Init': no todas las rutas de acceso de control devuelven un valor
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\animator.cpp(144): warning C4715: 'Animator::changeAnim': no todas las rutas de acceso de control devuelven un valor
-  LINK : no se encontró D:\UNIVERSIDAD\PPA ALADDIN\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
-Aladdin.obj : warning LNK4217: se importó el símbolo ?isButtonPressed@Joystick@sf@@SA_NII@Z (public: static bool __cdecl sf::Joystick::isButtonPressed(unsigned int,unsigned int)) definido localmente en la función "public: static void __cdecl InputManager::controller(class Aladdin &)" (?controller@InputManager@@SAXAAVAladdin@@@Z)
-Aladdin.obj : warning LNK4217: se importó el símbolo ?getAxisPosition@Joystick@sf@@SAMIW4Axis@12@@Z (public: static float __cdecl sf::Joystick::getAxisPosition(unsigned int,enum sf::Joystick::Axis)) definido localmente en la función "public: static void __cdecl InputManager::controller(class Aladdin &)" (?controller@InputManager@@SAXAAVAladdin@@@Z)
-CWindow.obj : warning LNK4217: se importó el símbolo ??0String@sf@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVlocale@3@@Z (public: __thiscall sf::String::String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::locale const &)) definido localmente en la función "public: void __thiscall CWindow::initWindow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int const &,int const &,enum WINDOWTYPE const &)" (?initWindow@CWindow@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABH1ABW4WINDOWTYPE@@@Z)
-CWindow.obj : warning LNK4217: se importó el símbolo ??1String@sf@@QAE@XZ (public: __thiscall sf::String::~String(void)) definido localmente en la función "public: void __thiscall CWindow::initWindow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int const &,int const &,enum WINDOWTYPE const &)" (?initWindow@CWindow@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABH1ABW4WINDOWTYPE@@@Z)
-CWindow.obj : warning LNK4217: se importó el símbolo ??0VideoMode@sf@@QAE@III@Z (public: __thiscall sf::VideoMode::VideoMode(unsigned int,unsigned int,unsigned int)) definido localmente en la función "public: void __thiscall CWindow::initWindow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int const &,int const &,enum WINDOWTYPE const &)" (?initWindow@CWindow@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABH1ABW4WINDOWTYPE@@@Z)
-CWindow.obj : warning LNK4217: se importó el símbolo ??0Window@sf@@QAE@VVideoMode@1@ABVString@1@IABUContextSettings@1@@Z (public: __thiscall sf::Window::Window(class sf::VideoMode,class sf::String const &,unsigned int,struct sf::ContextSettings const &)) definido localmente en la función "public: void __thiscall CWindow::initWindow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int const &,int const &,enum WINDOWTYPE const &)" (?initWindow@CWindow@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABH1ABW4WINDOWTYPE@@@Z)
-CWindow.obj : warning LNK4217: se importó el símbolo ??1Window@sf@@UAE@XZ (public: virtual __thiscall sf::Window::~Window(void)) definido localmente en la función "public: virtual void * __thiscall sf::Window::`scalar deleting destructor'(unsigned int)" (??_GWindow@sf@@UAEPAXI@Z)
-CWindow.obj : warning LNK4217: se importó el símbolo ?close@Window@sf@@QAEXXZ (public: void __thiscall sf::Window::close(void)) definido localmente en la función "public: void __thiscall CWindow::closeWindow(void)" (?closeWindow@CWindow@@QAEXXZ)
-RenderManager.obj : warning LNK4217: se importó el símbolo ?close@Window@sf@@QAEXXZ (public: void __thiscall sf::Window::close(void)) definido localmente en la función "void * __cdecl std::_Allocate<8,struct std::_Default_allocate_traits,0>(unsigned int)" (??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z)
-CWindow.obj : warning LNK4217: se importó el símbolo ?isOpen@Window@sf@@QBE_NXZ (public: bool __thiscall sf::Window::isOpen(void)const ) definido localmente en la función "public: bool __thiscall CWindow::onUpdateHandleW(void)" (?onUpdateHandleW@CWindow@@QAE_NXZ)
-RenderManager.obj : warning LNK4217: se importó el símbolo ?isOpen@Window@sf@@QBE_NXZ (public: bool __thiscall sf::Window::isOpen(void)const ) definido localmente en la función "public: static void __cdecl std::_Default_allocator_traits<class std::allocator<struct std::_Container_proxy> >::construct<struct std::_Container_proxy,struct std::_Container_proxy>(class std::allocator<struct std::_Container_proxy> &,struct std::_Container_proxy * const,struct std::_Container_proxy &&)" (??$construct@U_Container_proxy@std@@U12@@?$_Default_allocator_traits@V?$allocator@U_Container_proxy@std@@@std@@@std@@SAXAAV?$allocator@U_Container_proxy@std@@@1@QAU_Container_proxy@1@$$QAU31@@Z)
-CWindow.obj : warning LNK4217: se importó el símbolo ?pollEvent@Window@sf@@QAE_NAAVEvent@2@@Z (public: bool __thiscall sf::Window::pollEvent(class sf::Event &)) definido localmente en la función "public: bool __thiscall CWindow::onUpdateHandleW(void)" (?onUpdateHandleW@CWindow@@QAE_NXZ)
-RenderManager.obj : warning LNK4217: se importó el símbolo ?pollEvent@Window@sf@@QAE_NAAVEvent@2@@Z (public: bool __thiscall sf::Window::pollEvent(class sf::Event &)) definido localmente en la función "wchar_t * __cdecl std::_Maklocstr<wchar_t>(char const *,wchar_t *,struct _Cvtvec const &)" (??$_Maklocstr@_W@std@@YAPA_WPBDPA_WABU_Cvtvec@@@Z)
-RenderManager.obj : warning LNK4217: se importó el símbolo ?asSeconds@Time@sf@@QBEMXZ (public: float __thiscall sf::Time::asSeconds(void)const ) definido localmente en la función "public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)
-RenderManager.obj : warning LNK4217: se importó el símbolo ??0Clock@sf@@QAE@XZ (public: __thiscall sf::Clock::Clock(void)) definido localmente en la función "public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)
-RenderManager.obj : warning LNK4217: se importó el símbolo ?getElapsedTime@Clock@sf@@QBE?AVTime@2@XZ (public: class sf::Time __thiscall sf::Clock::getElapsedTime(void)const ) definido localmente en la función "public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)
-RenderManager.obj : warning LNK4217: se importó el símbolo ?restart@Clock@sf@@QAE?AVTime@2@XZ (public: class sf::Time __thiscall sf::Clock::restart(void)) definido localmente en la función "public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)
-RenderManager.obj : warning LNK4217: se importó el símbolo ?setSize@Window@sf@@QAEXABV?$Vector2@I@2@@Z (public: void __thiscall sf::Window::setSize(class sf::Vector2<unsigned int> const &)) definido localmente en la función "public: void __thiscall RenderManager::init(void)" (?init@RenderManager@@QAEXXZ)
-RenderManager.obj : warning LNK4217: se importó el símbolo ?setFramerateLimit@Window@sf@@QAEXI@Z (public: void __thiscall sf::Window::setFramerateLimit(unsigned int)) definido localmente en la función "public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)
-RenderManager.obj : warning LNK4217: se importó el símbolo ?display@Window@sf@@QAEXXZ (public: void __thiscall sf::Window::display(void)) definido localmente en la función "public: void __thiscall RenderManager::onUpdate(void)" (?onUpdate@RenderManager@@QAEXXZ)
   SNESVERTICAL2_0.vcxproj -> D:\UNIVERSIDAD\PPA ALADDIN\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe
