@@ -141,6 +141,7 @@
     <ClCompile Include="source\ResourceManager.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\SoundManager.cpp" />
+    <ClCompile Include="source\Vision.cpp" />
     <ClCompile Include="source\WallCollider.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +169,7 @@
     <ClInclude Include="include\ResourceManager.h" />
     <ClInclude Include="include\SceneManager.h" />
     <ClInclude Include="include\SoundManager.h" />
+    <ClInclude Include="include\Vision.h" />
     <ClInclude Include="include\WallCollider.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
