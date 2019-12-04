@@ -138,6 +138,7 @@
     <ClCompile Include="source\ResourceManager.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\SoundManager.cpp" />
+    <ClCompile Include="source\Vision.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Aladdin.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="include\ResourceManager.h" />
     <ClInclude Include="include\SceneManager.h" />
     <ClInclude Include="include\SoundManager.h" />
+    <ClInclude Include="include\Vision.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
