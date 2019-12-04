@@ -31,6 +31,30 @@ void footsCollider::update()
 	for (size_t i = 0; i < colliders.size(); i++)
 	{
 		boxCollider* checkbox = colliders[i];
+		if (this == checkbox)
+		{
+			continue;
+		}
+		if (boxColl->getGlobalBounds().intersects(checkbox->getBox()->getGlobalBounds()))
+		{
+			if (checkbox->getType() == WALLCOLLIDER)
+			{
+
+				if (this->boxColl->getPosition().x > checkbox->getBox()->getPosition().x)
+				{
+					myObject->position->x = checkbox->getBox()->getPosition().x + (checkbox->getBox()->getSize().x / 2 + myObject->shape->getSize().x / 2);
+				}
+				else
+				{
+					myObject->position->x = checkbox->getBox()->getPosition().x - (checkbox->getBox()->getSize().x / 2 + myObject->shape->getSize().x / 2);
+				}
+
+			}
+		}
+	}
+	for (size_t i = 0; i < colliders.size(); i++)
+	{
+		boxCollider* checkbox = colliders[i];
 		if (this== checkbox)
 		{
 			continue;
@@ -39,22 +63,22 @@ void footsCollider::update()
 		{
 			if (checkbox->getType() == JUMPERCOLLIDER)
 			{
-			    
 				*myObject->fallTime = 0;
 				*myObject->currentJumpForce = *myObject->JumpForce;
 				myObject->canPressForForce = true;
 				myObject->timeToPress = 0;
-	
+				
+				
 			}
 			else if (checkbox->getType() == FLOOTCOLLIDER)
 			{
-				
+
 				if (this->boxColl->getPosition().y > (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y)) + 1)
 				{
-					
+
 					//position->y *= -1;
 				}
-				myObject->isGrounded= true;
+				myObject->isGrounded = true;
 				if (myObject->isJump)
 				{
 					myObject->isJump = false;
@@ -63,19 +87,6 @@ void footsCollider::update()
 				float ypos = (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y));
 				boxColl->setPosition(sf::Vector2f(myObject->position->x, ypos));
 				myObject->position->y = boxColl->getPosition().y + 4;
-				return;
-			}
-			else if (checkbox->getType() == WALLCOLLIDER)
-			{
-				if (this->boxColl->getPosition().x > checkbox->getBox()->getPosition().x)
-				{
-
-				}
-				else
-				{
-
-				}
-				return;
 			}
 	
 		}
