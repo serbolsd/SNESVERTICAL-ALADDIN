@@ -128,6 +128,7 @@
     <ClCompile Include="source\component.cpp" />
     <ClCompile Include="source\CWindow.cpp" />
     <ClCompile Include="source\footCollision.cpp" />
+    <ClCompile Include="source\GameMap.cpp" />
     <ClCompile Include="source\GameObject.cpp" />
     <ClCompile Include="source\GraphicApi.cpp" />
     <ClCompile Include="source\GravityAladdin.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="include\CWindow.h" />
     <ClInclude Include="include\Enemy.h" />
     <ClInclude Include="include\footCollision.h" />
+    <ClInclude Include="include\GameMap.h" />
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\GraphicApi.h" />
     <ClInclude Include="include\GravityAladdin.h" />
