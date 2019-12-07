@@ -51,7 +51,8 @@ void GraphicApi::loadResources(SceneManager &sceneManager, CCamera*camera, Resou
 	int idtex;
 	GameObject* fondo1 = new GameObject();
 	sceneManager.addObject(fondo1);
-		resources.loadTextures("resources\\Levels\\level1.gif", idtex, sceneManager.gameObjects[fondo1->getID()]->sprite);
+		//resources.loadTextures("resources\\Levels\\level1.gif", idtex, sceneManager.gameObjects[fondo1->getID()]->sprite);
+		resources.loadTextures("resources\\Levels\\aladinlevel1.png", idtex, sceneManager.gameObjects[fondo1->getID()]->sprite);
 		sceneManager.gameObjects[fondo1->getID()]->setTextureID(idtex);
 		sceneManager.gameObjects[fondo1->getID()]->setPosition(0, 0, 5);
 

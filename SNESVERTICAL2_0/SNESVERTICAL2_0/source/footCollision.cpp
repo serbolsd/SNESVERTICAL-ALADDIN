@@ -27,6 +27,10 @@ footsCollider::~footsCollider()
 void footsCollider::update()
 {
 	boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y-4)));
+	if (myObject->goingUp)
+	{
+		return;
+	}
 	
 	for (size_t i = 0; i < colliders.size(); i++)
 	{

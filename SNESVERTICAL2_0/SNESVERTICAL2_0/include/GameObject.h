@@ -81,6 +81,9 @@ public:
 	bool isRun = false;// if is run is true
 	bool isPlane = false;// if isPlane is true, this is for change the force of the falling
 	bool haveParachute = false;//if have parachute
+	bool goingUp = false;//if is grabbed can goingup
+	bool canGoingUp = false;//if the cornice is the tipe cornice
+	float timeToGoingUp = 0;//el tiempo que se tarda en subir
 	bool isIdle = false;
 	bool isMove = false;
 	bool isThrow = false;

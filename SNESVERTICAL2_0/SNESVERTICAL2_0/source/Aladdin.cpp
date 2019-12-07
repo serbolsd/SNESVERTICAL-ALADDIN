@@ -55,6 +55,27 @@ void Aladdin::onUpdate()
 	{
 		*fallTime = 0;
 	}
+	if (isGrabbed)
+	{
+		*fallTime = 0;
+	}
+	if (goingUp)
+	{
+		timeToGoingUp += *deltaTime;
+		if (timeToGoingUp<0.8)
+		{
+			position->y -= 1.1;
+		}
+		else
+		{
+			goingUp = false;
+			timeToGoingUp = 0;
+		}
+	}
+	else
+	{
+		timeToGoingUp = 0;
+	}
 	InputManager::OnUpdate(*this);
 	for (int i = 0; i < components.size(); i++)
 	{

@@ -132,8 +132,8 @@ inline void InputManager::keyboard(Aladdin & player)
 inline void InputManager::controller(Aladdin & player)
 {
 	if (//Veo si la cruzeta esta siendo precionada
-		sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::X) > 10 ||
-		sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::X) < -10
+		(sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::X) > 10 ||
+		sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::X) < -10)&&!player.goingUp &&!player.isGrabbed
 		)
 	{
 		player.isMove = true;
@@ -237,7 +237,7 @@ inline void InputManager::controller(Aladdin & player)
 	float axisy = sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::Y);
 	std::cout << axisy << std::endl;
 	system("cls");
-	if (sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::Y) > 10)//veo si se esta agachando
+	if (sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::Y) > 10 && !player.goingUp)//veo si se esta agachando
 	{
 		if (player.isGrabbed)
 		{
@@ -249,6 +249,11 @@ inline void InputManager::controller(Aladdin & player)
 		}
 		player.animatorID = 8;
 		player.isCrouched = true;
+	}
+	else if ((sf::Joystick::getAxisPosition(player.IndexControl, sf::Joystick::Y) < -10) && player.canGoingUp &&!player.goingUp)
+	{
+		player.goingUp = true;
+		player.timeToGoingUp = 0;
 	}
 	else
 	{
