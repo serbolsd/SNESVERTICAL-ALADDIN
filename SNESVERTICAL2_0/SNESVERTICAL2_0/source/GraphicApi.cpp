@@ -4,6 +4,8 @@
 #include "../include/GravityAladdin.h"
 #include "../include/footCollision.h"
 #include "../include/HeadCollision.h"
+#include "../include/hitboxAladdin.h"
+#include "../include/hitbox.h"
 GraphicApi::GraphicApi()
 {
 }
@@ -14,6 +16,10 @@ GraphicApi::~GraphicApi()
 
 void GraphicApi::loadResources(SceneManager &sceneManager, CCamera*camera, ResourceManger& resources)
 {
+	boxCollider* cameraHitbox = new HitBox(50, 50);
+	cameraHitbox->setCenter(25,25);
+	camera->hitbox = cameraHitbox;
+	colliders.push_back(cameraHitbox);
 	//animator descriptor of aladdin
 	AnimatorDesc PathDescriptorAladdin;
 	PathDescriptorAladdin.RunPath = "resources\\AladdinAnimations\\sprint.png";
@@ -39,13 +45,15 @@ void GraphicApi::loadResources(SceneManager &sceneManager, CCamera*camera, Resou
 		aladdin->setComponente(move);
 		Component* Gravity = new GravityAladdin();
 		aladdin->setComponente(Gravity);
-		footsCollider* footaladdin = new footsCollider(5,2.5);
+		footsCollider* footaladdin = new footsCollider(1,2.5);
 		footaladdin->setType(FOOTCOLLIDER);
 		Component* footcollider = footaladdin;
 		aladdin->setComponente(footcollider);
 		headCollider* headAladdin = new headCollider(2,2);
 		Component* headcoll = headAladdin;
 		aladdin->setComponente(headcoll);
+		AladdinHitbox = new HitBoxAladdin(6,20);
+		aladdin->setComponente(AladdinHitbox);
 	sceneManager.addObject(aladdin);
 	//init the parallax
 	int idtex;
@@ -62,7 +70,7 @@ void GraphicApi::loadResources(SceneManager &sceneManager, CCamera*camera, Resou
 		resources.loadTextures("resources\\fondo2.jpg", idtex, sceneManager.gameObjects[fondo2->getID()]->sprite);
 		sceneManager.gameObjects[fondo2->getID()]->setTextureID(idtex);
 		sceneManager.gameObjects[fondo2->getID()]->setPosition(0, -10, 6);
-
+	Component *hitbox = new HitBox(50,20);
 	QUAD* floor1 = new QUAD(50, 20);
 	floor1->setFillColor(sf::Color::Green);
 	floor1->setPosition(0,80,0);
@@ -72,6 +80,7 @@ void GraphicApi::loadResources(SceneManager &sceneManager, CCamera*camera, Resou
 		floorCollider1->setType(COLLIDERTYPE::FLOOTCOLLIDER);
 		Component* floorCollider = floorCollider1;
 		floor->setComponente(floorCollider);
+		floor->setComponente(hitbox);
 	sceneManager.addObject(floor);
 
 	QUAD* rebound = new QUAD(30, 20);
@@ -83,6 +92,8 @@ void GraphicApi::loadResources(SceneManager &sceneManager, CCamera*camera, Resou
 	rebound1->setType(COLLIDERTYPE::JUMPERCOLLIDER);
 	floorCollider = rebound1;
 	floor->setComponente(floorCollider);
+	hitbox = new HitBox(30, 20);
+	floor->setComponente(hitbox);
 	sceneManager.addObject(floor);
 
 	QUAD* cornice1 = new QUAD(2, 2);

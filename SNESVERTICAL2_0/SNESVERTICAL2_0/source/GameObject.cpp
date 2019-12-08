@@ -100,6 +100,14 @@ void GameObject::setPosition(float posx, float posy, float posz)
 	setPosition(sf::Vector3f(posx,posy,posz));
 }
 
+void GameObject::getColliders(std::vector<boxCollider*> &colls)
+{
+	for (size_t i = 0; i < mycolliders.size(); i++)
+	{
+		colls.push_back(mycolliders[i]);
+	}
+}
+
 void GameObject::setComponente(Component *newcomponent)	
 {
 	for (int i = 0; i < components.size(); i++)//revisara todos los componente en su lista de componentes
@@ -118,6 +126,10 @@ void GameObject::setComponente(Component *newcomponent)
 				}
 				else
 				{
+					if (box2->getType()==COLLIDERTYPE::HITBOXCOLLIDER)
+					{
+						hitbox = box2;
+					}
 					continue;
 				}
 			}
@@ -132,6 +144,7 @@ void GameObject::setComponente(Component *newcomponent)
 	if (newcomponent->type==collider)
 	{
 		boxCollider* box2 = dynamic_cast<boxCollider*>(newcomponent);
+		mycolliders.push_back(box2);
 		colliders.push_back(box2);
 	}
 	newcomponent->myObject = this;

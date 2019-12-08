@@ -133,6 +133,8 @@
     <ClCompile Include="source\GraphicApi.cpp" />
     <ClCompile Include="source\GravityAladdin.cpp" />
     <ClCompile Include="source\HeadCollision.cpp" />
+    <ClCompile Include="source\hitbox.cpp" />
+    <ClCompile Include="source\hitboxAladdin.cpp" />
     <ClCompile Include="source\InvisibleObject.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\RenderManager.cpp" />
@@ -159,6 +161,8 @@
     <ClInclude Include="include\GraphicApi.h" />
     <ClInclude Include="include\GravityAladdin.h" />
     <ClInclude Include="include\HeadCollision.h" />
+    <ClInclude Include="include\hitbox.h" />
+    <ClInclude Include="include\hitboxAladdin.h" />
     <ClInclude Include="include\InputManager.h" />
     <ClInclude Include="include\InvisibleObject.h" />
     <ClInclude Include="include\Quad.h" />

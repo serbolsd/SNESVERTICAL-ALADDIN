@@ -24,16 +24,12 @@ headCollider::~headCollider()
 
 void headCollider::update()
 {
-	this->boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y-22)));
+	this->boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y - 22)));
 	if (myObject->goingUp)
 	{
 		return;
 	}
-	if (myObject->isGrounded|| myObject->disGrabbed)
-	{
-		return;
-	}
-	for (int i = 0; i < colliders.size(); i++)
+	for (size_t i = 0; i < colliders.size(); i++)
 	{
 		boxCollider* checkbox = colliders[i];
 		if (this == checkbox)
@@ -42,36 +38,19 @@ void headCollider::update()
 		}
 		if (boxColl->getGlobalBounds().intersects(checkbox->getBox()->getGlobalBounds()))
 		{
-			if (checkbox->getType() == CORNICECOLLIDER)
+			if (checkbox->getType() == FLOOTCOLLIDER)
 			{
-				*myObject->fallTime = 0;
+
+				if (this->boxColl->getPosition().y + boxColl->getSize().y < (checkbox->getBox()->getPosition().y) - 1)
+				{
+					float y = boxColl->getPosition().y + boxColl->getSize().y + checkbox->getBox()->getPosition().y;
+					boxColl->setPosition(boxColl->getPosition().x, y);
+					myObject->setPosition(boxColl->getPosition().x,y+22);
+				}
 				*myObject->currentJumpForce = 0;
-				myObject->isGrabbed = true;
-				myObject->canGoingUp = true;
-				boxColl->setPosition(checkbox->getBox()->getPosition());
-				myObject->position->x = boxColl->getPosition().x;
-				myObject->position->y = (boxColl->getPosition().y +22);
+				*myObject->fallTime = 0;
 				return;
 			}
-			else if (checkbox->getType() == BALANCERCOLLIDER)
-			{
-				if (!myObject->isGrabbed)
-				{
-					*myObject->fallTime = 0;
-					*myObject->currentJumpForce = 0;
-					myObject->isGrabbed = true;
-					myObject->isBalancing = true;
-					myObject->position->x = checkbox->getBox()->getPosition().x;
-					myObject->position->y = -(checkbox->getBox()->getPosition().y + 17.5);
-					return;
-				}
-			}
-		}
-		else
-		{
-			myObject->isGrabbed = false;
-			myObject->isBalancing = false;
-			myObject->canGoingUp = false;
 		}
 	}
 }

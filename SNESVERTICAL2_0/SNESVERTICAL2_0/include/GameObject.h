@@ -12,6 +12,7 @@ enum TypeObject
 	jumping,
 	item
 };
+class boxCollider;
 class GameObject
 {
 public:
@@ -59,6 +60,7 @@ public:
 	//return the sprite
 	sf::Sprite getsprite() { return sprite; };
 	sf::Sprite sprite;
+	void getColliders(std::vector<boxCollider*>&colls);
 
 	float* speed = nullptr;//the speed with the object move normaly
 	float* actualSpeed = nullptr;//the actual speed of the objetc
@@ -100,8 +102,10 @@ public:
 	float* JumpForce;//The normal jump force
 	float* ParachuteForce;//the normal force if isPlane
 	float* currentParachuteForce;//the actual force of parachute
+	boxCollider* hitbox=nullptr;
 public:
 	std::vector<Component*> components;//the list of its components
+	std::vector<boxCollider*> mycolliders;//the list of its components
 	int ID;//its id
 	int IDtexture = 0;//its id texture
 	TypeObject type;//its type object

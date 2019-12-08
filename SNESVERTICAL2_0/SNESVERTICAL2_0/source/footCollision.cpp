@@ -17,7 +17,7 @@ footsCollider::footsCollider(float sizeX, float sizeY)
 	boxColl->setOrigin(sizeX/2,sizeY);
 	boxColl->setFillColor(sf::Color::Transparent);
 	boxColl->setOutlineColor(sf::Color::Yellow);
-	boxColl->setOutlineThickness(2);
+	boxColl->setOutlineThickness(0.2);
 }
 
 footsCollider::~footsCollider()
@@ -87,6 +87,9 @@ void footsCollider::update()
 			
 			else if (checkbox->getType() == JUMPERCOLLIDER)
 			{
+				float ypos = (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y));
+				boxColl->setPosition(sf::Vector2f(myObject->position->x, ypos));
+				myObject->position->y = boxColl->getPosition().y + 4;
 				*myObject->fallTime = 0;
 				*myObject->currentJumpForce = *myObject->JumpForce;
 				myObject->canPressForForce = true;

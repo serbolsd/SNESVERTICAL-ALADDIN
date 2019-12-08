@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include"GameObject.h"
+class boxCollider;
 class CCamera
 {
 public:
@@ -18,7 +19,7 @@ public:
 	
 	};
 	void Update();
-	
+	boxCollider* hitbox;
 private:
 	sf::View * m_view;
 	float minZoom = 0.8f;

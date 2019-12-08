@@ -1,4 +1,5 @@
 #include "../include/CCamera.h"
+#include "../include/boxCollider.h"
 
 CCamera::CCamera()
 {
@@ -53,5 +54,6 @@ void CCamera::setObjectFollow(GameObject* object)
 void CCamera::Update()
 {
 	m_view->setCenter(position->x,position->y);
+	hitbox->getBox()->setPosition(position->x, position->y);
 }
 

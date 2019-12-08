@@ -1,4 +1,5 @@
 #include "../include/SceneManager.h"
+#include "../include/boxCollider.h"
 SceneManager::SceneManager()
 {
 }
@@ -13,6 +14,7 @@ void SceneManager::onInit()
 	for (int i = 0; i < gameObjects.size(); i++)
 	{
 		gameObjects[i]->deltaTime = deltaTime;
+		gameObjects[i]->onUpdate();
 	}
 }
 
@@ -20,11 +22,15 @@ void SceneManager::culin(std::vector<GameObject*> &scene)
 {
 	for (int i = 0; i < gameObjects.size(); i++)//revisa cada objeto en la scena
 	{
-		//if (gameObjects[i].iscollision(camera.collider))//si esta colisionanado con la camara
-		//{
-		//	sceneObjects.push_back(gameObjects[i]);//se guardar en el vector de objetos que se mandara a pintar
-		//}
-		scene.push_back(gameObjects[i]);
+		if (gameObjects[i]->hitbox!=nullptr)
+		{
+			if (gameObjects[i]->hitbox->getBox()->getGlobalBounds().intersects(cam->hitbox->getBox()->getGlobalBounds()))//si esta colisionanado con la camara
+			{
+				scene.push_back(gameObjects[i]);//se guardar en el vector de objetos que se mandara a pintar
+			}
+		}
+		
+		//scene.push_back(gameObjects[i]);
 	}
 }
 
@@ -49,6 +55,12 @@ void SceneManager::onUpdate()
 	std::vector<GameObject*> sceneObjects;
 	culin(sceneObjects);//se revisa que objetos se van a pintar
 	checkOrder(sceneObjects);//se ordenan los objetos por su posicion en z
+	std::vector<boxCollider*> collidersInScene;
+	for (int i = 0; i < sceneObjects.size(); i++)//por cada objeto que va a pintar
+	{
+		sceneObjects[i]->getColliders(collidersInScene);
+	}
+	colliders = collidersInScene;
 	for (int i = 0; i < sceneObjects.size(); i++)//por cada objeto que va a pintar
 	{
 		sceneObjects[i]->onUpdate();//se actualiza
