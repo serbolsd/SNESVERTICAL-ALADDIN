@@ -30,7 +30,7 @@ void Aladdin::onInit()
 	speedRun = new float(1.5);
 	speedJump = new float(10);
 	speedPlane = new float(10);
-	JumpForce = new float(5);
+	JumpForce = new float(5.2);
 	ParachuteForce = new float(7.37);
 	currentJumpForce = new float(0);
 	currentParachuteForce = new float(0);
@@ -58,6 +58,19 @@ void Aladdin::onUpdate()
 	if (isGrabbed)
 	{
 		*fallTime = 0;
+    if (isGrabbed)
+    {
+      *fallTime = 0;
+      if (isBalancing)
+      {
+//         *balancingTime += *deltaTime;
+//         hitbox->getBox()->setRotation(cos(*balancingTime));
+      }
+    }
+    else
+    {
+      //hitbox->getBox()->setRotation(0);
+    }
 	}
 	if (goingUp)
 	{

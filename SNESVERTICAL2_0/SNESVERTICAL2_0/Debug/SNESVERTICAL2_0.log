@@ -1,5 +1,8 @@
 ﻿  GraphicApi.cpp
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(28): warning C4018: '<': no coinciden signed/unsigned
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(38): warning C4018: '<': no coinciden signed/unsigned
-d:\universidad\ppa aladdin\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(46): warning C4018: '<': no coinciden signed/unsigned
-  SNESVERTICAL2_0.vcxproj -> D:\UNIVERSIDAD\PPA ALADDIN\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(28): warning C4018: '<': signed/unsigned mismatch
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(38): warning C4018: '<': signed/unsigned mismatch
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\quad.h(46): warning C4018: '<': signed/unsigned mismatch
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\graphicapi.cpp(133): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\graphicapi.cpp(136): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\graphicapi.cpp(189): warning C4305: 'argument': truncation from 'double' to 'float'
+  SNESVERTICAL2_0.vcxproj -> C:\Users\personal\Documents\GitHub\SNESVERTICAL-ALADDIN\SNESVERTICAL2_0\Debug\SNESVERTICAL2_0.exe

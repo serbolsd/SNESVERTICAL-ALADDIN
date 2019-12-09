@@ -143,7 +143,12 @@ void GameObject::setComponente(Component *newcomponent)
 	}
 	if (newcomponent->type==collider)
 	{
+    
 		boxCollider* box2 = dynamic_cast<boxCollider*>(newcomponent);
+    if (box2->getType() == COLLIDERTYPE::HITBOXCOLLIDER)
+    {
+      hitbox = box2;
+    }
 		mycolliders.push_back(box2);
 		colliders.push_back(box2);
 	}

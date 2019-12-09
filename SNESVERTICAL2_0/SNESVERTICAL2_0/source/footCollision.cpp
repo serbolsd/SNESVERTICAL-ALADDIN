@@ -65,7 +65,7 @@ void footsCollider::update()
 		}
 		if (boxColl->getGlobalBounds().intersects(checkbox->getBox()->getGlobalBounds()))
 		{
-			if (checkbox->getType() == FLOOTCOLLIDER)
+			if (checkbox->getType() == FLOOTCOLLIDER || checkbox->getType() == FLOOT_TRASPASABLE_COLLIDER)
 			{
 
 				if (this->boxColl->getPosition().y > (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y)) + 1)

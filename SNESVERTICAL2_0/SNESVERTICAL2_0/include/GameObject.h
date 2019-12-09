@@ -58,7 +58,7 @@ public:
 	//return the rectangleShape ptr
 	sf::RectangleShape* getshape() { return shape; };
 	//return the sprite
-	sf::Sprite getsprite() { return sprite; };
+	sf::Sprite &getsprite() { return sprite; };
 	sf::Sprite sprite;
 	void getColliders(std::vector<boxCollider*>&colls);
 

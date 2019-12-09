@@ -1,4 +1,5 @@
 #include "../include/RenderManager.h"
+#include "../include/GameObject.h"
 
 RenderManager::RenderManager()
 {
@@ -17,7 +18,7 @@ void RenderManager::init()
 	sceneManager.wind = window;
 	//init camera
 	camera = new CCamera();
-	camera->initCamera(0, 0,100,100);
+	camera->initCamera(0, 0,65,65);
 	sceneManager.cam = camera;
 	GraphicApi::loadResources(sceneManager,camera, resources);
 	deltaTime = new float(0);
@@ -60,7 +61,7 @@ void RenderManager::onUpdate()
 
 		*deltaTime = sf::Time(deltaClock.getElapsedTime()).asSeconds();
 		ImGui::SFML::Update(*window->getWindow(), deltaClock.restart());
-		//imguiAladdinDebug();
+		imguiAladdinDebug();
 		//imguiParallaxDebug();
 		//window->getWindow()->draw(shape);
 		window->getWindow()->setView(*camera->getView());
@@ -76,6 +77,16 @@ void RenderManager::onDelete()
 	delete deltaTime;
 	sceneManager.onDelete();
 	//resourceManager.onDelete();
+}
+void RenderManager::imguiAladdinDebug()
+{
+  GameObject * tmpAladdin = sceneManager.gameObjects[sceneManager.m_AladdinID];
+  ImGui::Begin("Debug Aladdin");
+  float tmpX = tmpAladdin->getPosition().x;
+  float tmpy = tmpAladdin->getPosition().y;
+  ImGui::SliderFloat("X", &tmpX, -3291, 3291);
+  ImGui::SliderFloat("Y", &tmpy, -3291, 3291);
+  ImGui::End();
 }
 //void RenderManager::imguiAladdinDebug()
 //{

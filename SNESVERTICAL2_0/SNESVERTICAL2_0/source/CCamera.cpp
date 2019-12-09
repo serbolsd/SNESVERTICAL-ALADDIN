@@ -53,7 +53,8 @@ void CCamera::setObjectFollow(GameObject* object)
 
 void CCamera::Update()
 {
-	m_view->setCenter(position->x,position->y);
-	hitbox->getBox()->setPosition(position->x, position->y);
+  float addY = -30;
+	m_view->setCenter(position->x,position->y+ addY);
+	hitbox->getBox()->setPosition(position->x, position->y+ addY);
 }
 

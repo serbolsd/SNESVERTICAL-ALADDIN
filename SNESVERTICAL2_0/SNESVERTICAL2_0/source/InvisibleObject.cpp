@@ -14,10 +14,15 @@ void InvisibleObject::onInit()
 
 void InvisibleObject::onUpdate()
 {
+  for (int i = 0; i < components.size(); i++)
+  {
+    components[i]->update();
+  }
 }
 
 void InvisibleObject::draw(sf::RenderWindow & wind)
 {
+
 }
 
 void InvisibleObject::onDelete()

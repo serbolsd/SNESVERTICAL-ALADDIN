@@ -17,6 +17,7 @@ public:
 	std::vector<GameObject*> gameObjects;
 	int IDmaxObject=0;
 	float *deltaTime;
+  int m_AladdinID;
 private:
 	
 	void culin(std::vector<GameObject*> &scene);

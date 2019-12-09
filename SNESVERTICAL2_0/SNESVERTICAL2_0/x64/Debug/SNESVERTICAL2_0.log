@@ -1,28 +1,52 @@
 ﻿  Aladdin.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(3): fatal error C1083: No se puede abrir el archivo incluir: 'SFML/System/Vector3.hpp': No such file or directory
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(3): fatal error C1083: Cannot open include file: 'SFML/System/Vector3.hpp': No such file or directory
   Animation.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\animation.h(2): fatal error C1083: No se puede abrir el archivo incluir: 'SFML/Graphics.hpp': No such file or directory
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\animation.h(2): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   Animator.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\animation.h(2): fatal error C1083: No se puede abrir el archivo incluir: 'SFML/Graphics.hpp': No such file or directory
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\animation.h(2): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  boxCollider.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\boxcollider.h(3): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   CCamera.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\ccamera.h(2): fatal error C1083: No se puede abrir el archivo incluir: 'SFML/Graphics.hpp': No such file or directory
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\ccamera.h(2): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   component.cpp
   CWindow.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\cwindow.h(2): fatal error C1083: No se puede abrir el archivo incluir: 'SFML/Graphics.hpp': No such file or directory
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\cwindow.h(2): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  footCollision.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\boxcollider.h(3): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  GameMap.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gamemap.h(2): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   GameObject.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(3): fatal error C1083: No se puede abrir el archivo incluir: 'SFML/System/Vector3.hpp': No such file or directory
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(3): fatal error C1083: Cannot open include file: 'SFML/System/Vector3.hpp': No such file or directory
+  GraphicApi.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(3): fatal error C1083: Cannot open include file: 'SFML/System/Vector3.hpp': No such file or directory
+  GravityAladdin.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(3): fatal error C1083: Cannot open include file: 'SFML/System/Vector3.hpp': No such file or directory
+  HeadCollision.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\boxcollider.h(3): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  hitbox.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\boxcollider.h(3): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  hitboxAladdin.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\boxcollider.h(3): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  InvisibleObject.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(3): fatal error C1083: Cannot open include file: 'SFML/System/Vector3.hpp': No such file or directory
   main.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\main.cpp(1): fatal error C1083: No se puede abrir el archivo incluir: 'imgui-SFML.h': No such file or directory
-  mainManager.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\cwindow.h(2): fatal error C1083: No se puede abrir el archivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  parallax.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\main.cpp(1): fatal error C1083: Cannot open include file: 'imgui-SFML.h': No such file or directory
   RenderManager.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\cwindow.h(2): fatal error C1083: No se puede abrir el archivo incluir: 'SFML/Graphics.hpp': No such file or directory
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\gameobject.h(3): fatal error C1083: Cannot open include file: 'SFML/System/Vector3.hpp': No such file or directory
+  parallax.cpp
+  Render.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\cwindow.h(2): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Generating Code...
+  Compiling...
   ResourceManager.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\resourcemanager.cpp(1): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\resourcemanager.h(3): fatal error C1083: No se puede abrir el archivo incluir: 'SFML/Graphics.hpp': No such file or directory
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\source\resourcemanager.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\resourcemanager.h(3): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   SceneManager.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\cwindow.h(2): fatal error C1083: No se puede abrir el archivo incluir: 'SFML/Graphics.hpp': No such file or directory
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\cwindow.h(2): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   SoundManager.cpp
-d:\universidad\ppa\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\soundmanager.h(2): fatal error C1083: No se puede abrir el archivo incluir: 'SFML/Audio.hpp': No such file or directory
-  Generando código...
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\soundmanager.h(2): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  Vision.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\boxcollider.h(3): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  WallCollider.cpp
+c:\users\personal\documents\github\snesvertical-aladdin\snesvertical2_0\snesvertical2_0\include\boxcollider.h(3): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Generating Code...
