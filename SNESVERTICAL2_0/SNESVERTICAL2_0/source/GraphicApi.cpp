@@ -42,13 +42,15 @@ void GraphicApi::loadResources(SceneManager &sceneManager, CCamera*camera, Resou
 
 	QUAD* cornice2 = new QUAD(2, 2);
 		cornice2->setFillColor(sf::Color::Blue);
-		cornice2->setPosition(60, 18, 1);
+		cornice2->setPosition(20, 90, 1);
 	quad = cornice2;
+	hitbox=new HitBox(2,2);
 	boxCollider* cornicecoll2 = new boxCollider();
 		cornicecoll2->setSize(2, 2);
-		cornicecoll2->setType(COLLIDERTYPE::CORNICECOLLIDER);
+		cornicecoll2->setType(COLLIDERTYPE::BALANCERCOLLIDER);
 	quadCollider = cornicecoll2;
 	quad->setComponente(quadCollider);
+	quad->setComponente(hitbox);
 	sceneManager.addObject(quad);
 
 	QUAD* wall1 = new QUAD(20, 50);

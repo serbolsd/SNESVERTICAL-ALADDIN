@@ -63,8 +63,11 @@ void HitBoxAladdin::update()
 					*myObject->currentJumpForce = 0;
 					myObject->isGrabbed = true;
 					myObject->isBalancing = true;
-					myObject->position->x = checkbox->getBox()->getPosition().x;
-					myObject->position->y = -(checkbox->getBox()->getPosition().y + 17.5);
+					boxColl->setPosition(checkbox->getBox()->getPosition());
+					myObject->position->x = boxColl->getPosition().x;
+					myObject->position->y = (boxColl->getPosition().y + 22);
+					//myObject->position->x = checkbox->getBox()->getPosition().x;
+					//myObject->position->y = -(checkbox->getBox()->getPosition().y + 17.5);
 					return;
 				}
 			}

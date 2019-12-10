@@ -1,5 +1,6 @@
 #pragma once
 #include "Aladdin.h"
+#include "hitbox.h"
 #include <iostream>
 class InputManager
 {
@@ -37,8 +38,8 @@ inline void InputManager::keyboard(Aladdin & player)
 {
 	player.animatorID = 0;
 	if (//Veo si la cruzeta esta siendo precionada
-		sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Left) ||
-		sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Right)
+		(sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Left) ||
+		sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Right)) && !player.goingUp && !player.isGrabbed
 		)
 	{
 		player.isMove = true;
@@ -46,8 +47,8 @@ inline void InputManager::keyboard(Aladdin & player)
 		direcction.x = 0;
 		if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Left))
 		{
-			player.animatorID = 1;
 			direcction.x += -1;
+			player.animatorID = 1;
 		}
 		if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Right))
 		{
@@ -93,8 +94,25 @@ inline void InputManager::keyboard(Aladdin & player)
 			player.animatorID = 5;
 			player.isJump = true;
 			player.isGrounded = false;
+			player.isjumpBPressed = true;
+			*player.currentJumpForce = *player.JumpForce;
 		}
-		player.isjumpBPressed = true;
+		if (player.canPressForForce)
+		{
+			player.timeToPress += *player.deltaTime;
+			if (player.timeToPress > .8)
+			{
+				player.canPressForForce = false;
+			}
+			else
+			{
+				player.isjumpBPressed = true;
+			}
+		}
+		if (player.isBalancing)
+		{
+			player.hitbox->getBox()->getRotation();
+		}
 	}
 	else
 	{
@@ -102,30 +120,74 @@ inline void InputManager::keyboard(Aladdin & player)
 	}
 	if (player.isJump)
 	{
-		if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::A))//veo si se presiona el boton de planear
+		player.animatorID = 5;
+		if (player.isjumpBPressed)
 		{
-			player.animatorID = 6;
-			player.isPlane = true;
+			if (*player.currentJumpForce>*player.JumpForce*2)
+			{
+				*player.currentJumpForce = *player.JumpForce * 2;
+			}
+			else
+			{
+				*player.currentJumpForce += 0.3;
+			}
 		}
-		else
+		*player.fallTime += *player.deltaTime;
+		if (player.haveParachute)
 		{
-			player.animatorID = 5;
-			player.isPlane = false;
+			if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::A))//veo si se presiona el boton de planear
+			{
+				player.animatorID = 6;
+				player.isPlane = true;
+			}
+			else
+			{
+				player.animatorID = 5;
+				player.isPlane = false;
+			}
 		}
+	
 	}
 	if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::X))//veo si se presiona el boton de lanzar
 	{
 		player.animatorID = 7;
 		player.isThrow = true;
 	}
-	if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Down))//veo si se esta agachando
+	if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Down) && !player.goingUp)//veo si se esta agachando
 	{
-		player.animatorID = 8;
-		player.isCrouched = true;
+		if (player.isGrabbed)
+		{
+			player.disGrabbed = true;
+			*player.fallTime = 0;
+			player.isGrabbed = false;
+			player.shape->setRotation(0);
+			player.isBalancing = false;
+			player.animatorID = 8;
+		}
+		else
+		{
+			player.isCrouched = true;
+			player.animatorID = 9;
+		}
 	}
 	else
 	{
 		player.isCrouched = false;
+	}
+	if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Up) && player.canGoingUp && !player.goingUp)
+	{
+		player.goingUp = true;
+		player.timeToGoingUp = 0;
+		player.animatorID = 10;
+	}
+	if (player.disGrabbed)
+	{
+		*player.grabbedTime += *player.deltaTime;
+		if (*player.grabbedTime > 0.20)
+		{
+			player.disGrabbed = false;
+			*player.grabbedTime = 0;
+		}
 	}
 }
 
@@ -188,8 +250,8 @@ inline void InputManager::controller(Aladdin & player)
 		}
 		if (player.canPressForForce)
 		{
-			player.timeToPress = *player.fallTime;
-			if (player.timeToPress > 8)
+			player.timeToPress+= *player.fallTime;
+			if (player.timeToPress > .8)
 			{
 				player.canPressForForce = false;
 			}
@@ -220,10 +282,12 @@ inline void InputManager::controller(Aladdin & player)
 		{
 			if (sf::Joystick::isButtonPressed(player.IndexControl, 5))//veo si se presiona el boton de planear
 			{
+				player.animatorID = 6;
 				player.isPlane = true;
 			}
 			else
 			{
+				player.animatorID = 5;
 				player.isPlane = false;
 			}
 		}
@@ -254,6 +318,7 @@ inline void InputManager::controller(Aladdin & player)
 	{
 		player.goingUp = true;
 		player.timeToGoingUp = 0;
+		player.animatorID = 10;
 	}
 	else
 	{

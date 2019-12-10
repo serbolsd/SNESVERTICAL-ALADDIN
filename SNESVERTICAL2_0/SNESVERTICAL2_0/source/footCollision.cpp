@@ -46,11 +46,11 @@ void footsCollider::update()
 			
 				if (this->boxColl->getPosition().x > checkbox->getBox()->getPosition().x)
 				{
-					myObject->position->x = checkbox->getBox()->getPosition().x + (checkbox->getBox()->getSize().x / 2 + myObject->shape->getSize().x / 2 +3);
+					myObject->position->x = checkbox->getBox()->getPosition().x + (checkbox->getBox()->getSize().x / 2 + myObject->shape->getSize().x / 2);
 				}
 				else
 				{
-					myObject->position->x = checkbox->getBox()->getPosition().x - (checkbox->getBox()->getSize().x / 2 + myObject->shape->getSize().x / 2 +3);
+					myObject->position->x = checkbox->getBox()->getPosition().x - (checkbox->getBox()->getSize().x / 2 + myObject->shape->getSize().x / 2 );
 				}
 			
 			}
