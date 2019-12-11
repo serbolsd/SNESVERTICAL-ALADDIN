@@ -27,11 +27,45 @@ footsCollider::~footsCollider()
 void footsCollider::update()
 {
 	boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y-4)));
-	if (myObject->goingUp)
+	if (myObject->goingUp|| myObject->isGrabbed)
 	{
 		return;
 	}
-	
+	for (size_t i = 0; i < colliders.size(); i++)
+	{
+		boxCollider* checkbox = colliders[i];
+		if (this == checkbox)
+		{
+			continue;
+		}
+		if (boxColl->getGlobalBounds().intersects(checkbox->getBox()->getGlobalBounds()))
+		{
+			if (checkbox->getType() == FLOOTCOLLIDER || checkbox->getType() == FLOOT_TRASPASABLE_COLLIDER)
+			{
+
+				if (this->boxColl->getPosition().y > (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y)) + 1)
+				{
+
+					//position->y *= -1;
+				}
+				myObject->isGrounded = true;
+				if (myObject->isJump)
+				{
+					myObject->isJump = false;
+				}
+				//float ypos = (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y));
+				float ypos = (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y));
+				boxColl->setPosition(sf::Vector2f(myObject->position->x, ypos));
+				myObject->position->y = boxColl->getPosition().y + 4;
+				break;
+			}
+		}
+		else
+		{
+			myObject->isGrounded = false;
+			myObject->isJump = true;
+		}
+	}
 	for (size_t i = 0; i < colliders.size(); i++)
 	{
 		boxCollider* checkbox = colliders[i];
@@ -56,6 +90,10 @@ void footsCollider::update()
 			}
 		}
 	}
+	if (myObject->isGrounded)
+	{
+		return;
+	}
 	for (size_t i = 0; i < colliders.size(); i++)
 	{
 		boxCollider* checkbox = colliders[i];
@@ -65,27 +103,7 @@ void footsCollider::update()
 		}
 		if (boxColl->getGlobalBounds().intersects(checkbox->getBox()->getGlobalBounds()))
 		{
-			if (checkbox->getType() == FLOOTCOLLIDER || checkbox->getType() == FLOOT_TRASPASABLE_COLLIDER)
-			{
-
-				if (this->boxColl->getPosition().y > (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y)) + 1)
-				{
-
-					//position->y *= -1;
-				}
-				myObject->isGrounded = true;
-				if (myObject->isJump)
-				{
-					myObject->isJump = false;
-				}
-				//float ypos = (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y));
-				float ypos = (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y));
-				boxColl->setPosition(sf::Vector2f(myObject->position->x, ypos));
-				myObject->position->y = boxColl->getPosition().y + 4;
-				return;
-			}
-			
-			else if (checkbox->getType() == JUMPERCOLLIDER)
+			if (checkbox->getType() == JUMPERCOLLIDER)
 			{
 				float ypos = (checkbox->getBox()->getPosition().y - (checkbox->getBox()->getSize().y));
 				boxColl->setPosition(sf::Vector2f(myObject->position->x, ypos));

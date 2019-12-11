@@ -38,14 +38,28 @@ void RenderManager::onUpdate()
 	shape.setPosition(320, 240);
 	window->getWindow()->setFramerateLimit(30);
 	sf::Clock deltaClock;
+	sf::Event event;
 	while (window->getWindow()->isOpen()) {
-		sf::Event event;
+		
 		while (window->getWindow()->pollEvent(event)) {
 			ImGui::SFML::ProcessEvent(event);
 			ImGuiIO& io = ImGui::GetIO();
 			if (io.WantCaptureMouse)
 			{
 
+			}
+			if (event.type == sf::Event::JoystickConnected) 
+			{
+				Aladdin* tmpAladdin = dynamic_cast<Aladdin*>(sceneManager.gameObjects[sceneManager.m_AladdinID]);
+				tmpAladdin->IndexControl = event.joystickConnect.joystickId;
+			}
+			if (event.type == sf::Event::JoystickDisconnected)
+			{
+				Aladdin* tmpAladdin = dynamic_cast<Aladdin*>(sceneManager.gameObjects[sceneManager.m_AladdinID]);
+				if (tmpAladdin->IndexControl== event.joystickConnect.joystickId)
+				{
+					tmpAladdin->IndexControl = -1;
+				}
 			}
 			if (event.type == sf::Event::Closed) {
 				window->getWindow()->close();
@@ -86,6 +100,8 @@ void RenderManager::imguiAladdinDebug()
   float tmpy = tmpAladdin->getPosition().y;
   ImGui::SliderFloat("X", &tmpX, -3291, 3291);
   ImGui::SliderFloat("Y", &tmpy, -3291, 3291);
+  ImGui::SliderFloat("balancingSpeed", tmpAladdin->balancingSpeed, 0, 3);
+  ImGui::SliderFloat("balancingLarge", tmpAladdin->balancingLarge, 0, 100);
   ImGui::End();
 }
 //void RenderManager::imguiAladdinDebug()

@@ -24,8 +24,8 @@ headCollider::~headCollider()
 
 void headCollider::update()
 {
-	this->boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y - 22)));
-	if (myObject->goingUp)
+	this->boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y - 15)));
+	if (myObject->goingUp|| myObject->isGrabbed)
 	{
 		return;
 	}
@@ -41,14 +41,15 @@ void headCollider::update()
 			if (checkbox->getType() == FLOOTCOLLIDER)
 			{
 
-				if (this->boxColl->getPosition().y + boxColl->getSize().y < (checkbox->getBox()->getPosition().y) - 1)
+				if (this->boxColl->getPosition().y + boxColl->getSize().y > (checkbox->getBox()->getPosition().y))
 				{
-					float y = boxColl->getPosition().y + boxColl->getSize().y + checkbox->getBox()->getPosition().y;
+					float y = boxColl->getSize().y + checkbox->getBox()->getPosition().y+3;
 					boxColl->setPosition(boxColl->getPosition().x, y);
-					myObject->setPosition(boxColl->getPosition().x,y+22);
+					myObject->setPosition(boxColl->getPosition().x,y+15);
 				}
 				*myObject->currentJumpForce = 0;
 				*myObject->fallTime = 0;
+				myObject->isJump = true;
 				return;
 			}
 		}

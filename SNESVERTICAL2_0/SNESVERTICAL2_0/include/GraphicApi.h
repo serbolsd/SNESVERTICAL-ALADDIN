@@ -54,5 +54,7 @@ private:
 
   static void newWall(GameObject *& GroundGO, Component *& floorCollider, SceneManager &sceneManager, Component *& hitbox, float _posX, float _PosY, float _sizeX, float _SizeY, float _posTopWall, float _hitBoxSize);
   static void newTent(GameObject *& GroundGO, Component *& floorCollider, SceneManager &sceneManager, Component *& hitbox, float _posX, float _PosY, float _sizeX, float _SizeY);
+  static void newFloor(GameObject *& GroundGO, Component *& floorCollider, SceneManager &sceneManager, Component *& hitbox, float _posX, float _PosY, float _sizeX, float _SizeY);
+  static void newCornice(GameObject *& GroundGO, Component *& floorCollider, SceneManager &sceneManager, Component *& hitbox, float _posX, float _PosY, float _sizeX, float _SizeY);
 };
 

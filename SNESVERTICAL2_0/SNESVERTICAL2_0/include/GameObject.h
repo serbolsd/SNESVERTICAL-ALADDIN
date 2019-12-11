@@ -68,10 +68,13 @@ public:
 	float* speedJump = nullptr;// the speed with the object move when is jump
 	float* speedPlane = nullptr;// the speed with the object move when is plane
 	float* animatedSpeed = new float(.2f);// the speed with the object play the animations
+	float* balancingSpeed = nullptr;// the speed with the object play the animations
+	float* balancingLarge = nullptr;// the speed with the object play the animations
 	sf::Vector2f direction;// the direction of the object move
 	float *deltaTime;//the global time
 	float *fallTime;//the time it has been falling
 	float *grabbedTime;//the time it has been falling
+	float *balancingTime;
 	float *animationTime;//the current time of the animation on this object
 	int animatorID = 0;//the id of the actual animation
 	bool isGrabbed = false;// if grabbed is true
@@ -91,12 +94,17 @@ public:
 	bool isThrow = false;
 	bool isCrouched = false;
 	bool isSwinging = false;
+	bool alreadyPressJump = false;
+	bool movingAfterBalacing = false;
 	bool canPressForForce = false;//si rebotas esto sirve para precionar en un tiempo derterminado el boton de salto para ganar impulso
 	float timeToPress = 0;//esto es el tiempo que cuenta cuanto a pasado desde que puedes precionar para ganar fuerza, si se pasa del tiempo, no se gana fuerza
 	float sppedThrowTime = 1.5;
 	float sppedJumpTime = 1.5;
 	float throwTime = 0;
 	float JumpTime = 0;
+	float addforceX = 2;
+	float timeToStopAddX = 0.2;
+	float TimeAddX = 0;
 
 	float* currentJumpForce;//the actual force of jump, this cheng if isJumpPressed
 	float* JumpForce;//The normal jump force

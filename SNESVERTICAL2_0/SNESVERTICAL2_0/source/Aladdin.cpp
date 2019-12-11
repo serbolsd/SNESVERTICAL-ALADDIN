@@ -30,8 +30,8 @@ void Aladdin::onInit()
 	speedRun = new float(1.5);
 	speedJump = new float(10);
 	speedPlane = new float(10);
-	JumpForce = new float(4.5);
-	ParachuteForce = new float(7.37);
+	JumpForce = new float(4.9);
+	ParachuteForce = new float(9);
 	currentJumpForce = new float(0);
 	currentParachuteForce = new float(0);
 	setPosition(0, -50, 0);
@@ -43,17 +43,44 @@ void Aladdin::onInit()
 	fallTime = new float(0);
 	grabbedTime = new float(0);
 	IndexControl = 0;
+	balancingTime = new float(0);
+	balancingSpeed = new float(3);
+	balancingLarge = new float(100);
+	haveParachute = true;
 }
 
 void Aladdin::onUpdate()
 {
-	if (sf::Joystick::isConnected(0))
+	sf::Joystick::update();
+	for (size_t i = 0; i < 8; i++)
 	{
-		IndexControl = 0;
+		if (sf::Joystick::isConnected(i))
+		{
+			IndexControl = i;
+			break;
+		}
+		else
+		{
+			IndexControl = -1;
+		}
 	}
-	else
+	
+	if (canPressForForce)
 	{
-		IndexControl = -1;
+		timeToPress += *deltaTime;
+	}
+	if (movingAfterBalacing)
+	{
+		TimeAddX += *deltaTime;
+		if (TimeAddX <timeToStopAddX)
+		{
+			position->x += addforceX;
+		}
+		else
+		{
+			TimeAddX = 0;
+			movingAfterBalacing = false;
+		}
 	}
 	if (isJump)
 	{
@@ -63,23 +90,22 @@ void Aladdin::onUpdate()
 	{
 		*fallTime = 0;
 	}
-	if (isGrabbed)
-	{
-		*fallTime = 0;
     if (isGrabbed)
     {
       *fallTime = 0;
       if (isBalancing)
       {
          *balancingTime += *deltaTime;
-         hitbox->getBox()->setRotation(cos(*balancingTime));
+         hitbox->getBox()->setRotation(cos(*balancingTime**balancingSpeed)**balancingLarge);
+		 std::cout<< hitbox->getBox()->getRotation();
+		 system("cls");
       }
     }
     else
     {
       hitbox->getBox()->setRotation(0);
+	  //*balancingTime = 0;
     }
-	}
 	if (goingUp)
 	{
 		timeToGoingUp += *deltaTime;
@@ -91,6 +117,9 @@ void Aladdin::onUpdate()
 		{
 			goingUp = false;
 			timeToGoingUp = 0;
+			isGrabbed = false;
+			*fallTime = 0;
+			canGoingUp = false;
 		}
 	}
 	else
@@ -145,9 +174,15 @@ void Aladdin::onDelete()
 	if (fallTime)
 	{delete fallTime;				fallTime = nullptr;}
 	if (grabbedTime)
-	{delete grabbedTime;				grabbedTime = nullptr;}
+	{delete grabbedTime;			grabbedTime = nullptr;}
 	if (animationTime)
 	{delete animationTime;			animationTime = nullptr;}
 	if (position)
 	{delete position;				position = nullptr;}
+	if (balancingTime)
+	{delete balancingTime;			balancingTime = nullptr;}
+	if (animatedSpeed)
+	{delete animatedSpeed;			animatedSpeed = nullptr;}
+	if (balancingLarge)
+	{delete balancingLarge;			balancingLarge = nullptr;}
 }

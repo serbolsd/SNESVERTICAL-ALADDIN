@@ -26,7 +26,7 @@ HitBoxAladdin::~HitBoxAladdin()
 
 void HitBoxAladdin::update()
 {
-	this->boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y - 22)));
+	boxColl->setPosition(sf::Vector2f(myObject->position->x, (myObject->position->y - 20)));
 	if (myObject->goingUp)
 	{
 		return;
@@ -50,9 +50,10 @@ void HitBoxAladdin::update()
 				*myObject->currentJumpForce = 0;
 				myObject->isGrabbed = true;
 				myObject->canGoingUp = true;
+				myObject->isJump = false;
 				boxColl->setPosition(checkbox->getBox()->getPosition());
 				myObject->position->x = boxColl->getPosition().x;
-				myObject->position->y = (boxColl->getPosition().y + 22);
+				myObject->position->y = (boxColl->getPosition().y + 20);
 				return;
 			}
 			else if (checkbox->getType() == BALANCERCOLLIDER)
@@ -63,9 +64,10 @@ void HitBoxAladdin::update()
 					*myObject->currentJumpForce = 0;
 					myObject->isGrabbed = true;
 					myObject->isBalancing = true;
+					myObject->isJump = false;
 					boxColl->setPosition(checkbox->getBox()->getPosition());
 					myObject->position->x = boxColl->getPosition().x;
-					myObject->position->y = (boxColl->getPosition().y + 22);
+					myObject->position->y = (boxColl->getPosition().y + 20);
 					//myObject->position->x = checkbox->getBox()->getPosition().x;
 					//myObject->position->y = -(checkbox->getBox()->getPosition().y + 17.5);
 					return;
@@ -74,9 +76,9 @@ void HitBoxAladdin::update()
 		}
 		else
 		{
-			myObject->isGrabbed = false;
-			myObject->isBalancing = false;
-			myObject->canGoingUp = false;
+			//myObject->isGrabbed = false;
+			//myObject->isBalancing = false;
+			//myObject->canGoingUp = false;
 		}
 	}
 }

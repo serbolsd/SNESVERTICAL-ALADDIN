@@ -89,33 +89,54 @@ inline void InputManager::keyboard(Aladdin & player)
 	}
 	if (sf::priv::InputImpl::isKeyPressed(sf::Keyboard::Key::Space))//veo si se presiona el boton de saltar
 	{
-		if (!player.isjumpBPressed)//si ya se esta saltando no se vuelve a aplicar 
+		if (!player.alreadyPressJump)
 		{
-			player.animatorID = 5;
-			player.isJump = true;
-			player.isGrounded = false;
-			player.isjumpBPressed = true;
-			*player.currentJumpForce = *player.JumpForce;
-		}
-		if (player.canPressForForce)
-		{
-			player.timeToPress += *player.deltaTime;
-			if (player.timeToPress > .8)
+			player.alreadyPressJump = true;
+			if (!player.isjumpBPressed)//si ya se esta saltando no se vuelve a aplicar 
 			{
-				player.canPressForForce = false;
-			}
-			else
-			{
+				player.animatorID = 5;
+				player.isJump = true;
+				player.isGrounded = false;
 				player.isjumpBPressed = true;
+				*player.currentJumpForce = *player.JumpForce;
+			}
+			if (player.canPressForForce)
+			{
+				player.timeToPress += *player.deltaTime;
+				if (player.timeToPress > .8)
+				{
+					player.canPressForForce = false;
+				}
+				else
+				{
+					player.isjumpBPressed = true;
+				}
+			}
+			if (player.isBalancing)
+			{
+				player.canPressForForce = true;
+				player.movingAfterBalacing = true;
+				player.timeToPress = 0;
+				player.disGrabbed = true;
+				player.isBalancing = false;
+				*player.fallTime = 0;
+				*player.balancingTime = 0;
+				player.isGrabbed = false;
+				if (player.hitbox->getBox()->getRotation() > 180)
+				{
+					player.addforceX = 3;
+				}
+				else
+				{
+					player.addforceX = -3;
+				}
 			}
 		}
-		if (player.isBalancing)
-		{
-			player.hitbox->getBox()->getRotation();
-		}
+		
 	}
 	else
 	{
+		player.alreadyPressJump = false;
 		player.isjumpBPressed = false;
 	}
 	if (player.isJump)
@@ -159,6 +180,7 @@ inline void InputManager::keyboard(Aladdin & player)
 		{
 			player.disGrabbed = true;
 			*player.fallTime = 0;
+			*player.balancingTime = 0;
 			player.isGrabbed = false;
 			player.shape->setRotation(0);
 			player.isBalancing = false;
@@ -240,30 +262,58 @@ inline void InputManager::controller(Aladdin & player)
 	}
 	if (sf::Joystick::isButtonPressed(player.IndexControl, 2))//veo si se presiona el boton de saltar
 	{
-		if (!player.isjumpBPressed)//si ya se esta saltando no se vuelve a aplicar 
+		if (!player.isJump)
 		{
-			player.animatorID = 5;
-			player.isJump = true;
-			player.isGrounded = false;
-			player.isjumpBPressed = true;
-			*player.currentJumpForce = *player.JumpForce;
-		}
-		if (player.canPressForForce)
-		{
-			player.timeToPress+= *player.fallTime;
-			if (player.timeToPress > .8)
+			if (!player.alreadyPressJump)
 			{
-				player.canPressForForce = false;
-			}
-			else
-			{
-				player.isjumpBPressed = true;
+				player.alreadyPressJump = true;
+				if (!player.isjumpBPressed)//si ya se esta saltando no se vuelve a aplicar 
+				{
+					player.animatorID = 5;
+					player.isJump = true;
+					player.isGrounded = false;
+					player.isjumpBPressed = true;
+					*player.currentJumpForce = *player.JumpForce;
+				}
+				if (player.canPressForForce)
+				{
+					player.timeToPress += *player.fallTime;
+					if (player.timeToPress > .8)
+					{
+						player.canPressForForce = false;
+					}
+					else
+					{
+						player.isjumpBPressed = true;
+					}
+				}
+				if (player.isBalancing)
+				{
+					player.canPressForForce = true;
+					player.movingAfterBalacing = true;
+					player.timeToPress = 0;
+					player.disGrabbed = true;
+					player.isBalancing = false;
+					*player.fallTime = 0;
+					*player.balancingTime = 0;
+					player.isGrabbed = false;
+					if (player.hitbox->getBox()->getRotation() > 180)
+					{
+						player.addforceX = 3;
+					}
+					else
+					{
+						player.addforceX = -3;
+					}
+				}
 			}
 		}
+		
 		
 	}
 	else
 	{
+		player.alreadyPressJump = false;
 		player.isjumpBPressed = false;
 	}
 	if (player.isJump)
@@ -284,11 +334,22 @@ inline void InputManager::controller(Aladdin & player)
 			{
 				player.animatorID = 6;
 				player.isPlane = true;
+				*player.currentParachuteForce = *player.ParachuteForce;
+				*player.currentJumpForce = 0;
+
+			}
+			else if(player.isPlane)
+			{
+				player.animatorID = 5;
+				player.isPlane = false;
+				*player.currentParachuteForce = 0;
+				*player.fallTime = 0;
 			}
 			else
 			{
 				player.animatorID = 5;
 				player.isPlane = false;
+				*player.currentParachuteForce = 0;
 			}
 		}
 
@@ -310,6 +371,8 @@ inline void InputManager::controller(Aladdin & player)
 			player.isGrabbed = false;
 			player.shape->setRotation(0);
 			player.isBalancing = false;
+			player.canGoingUp = false;
+			*player.balancingTime = 0;
 		}
 		player.animatorID = 8;
 		player.isCrouched = true;
@@ -327,7 +390,7 @@ inline void InputManager::controller(Aladdin & player)
 	if (player.disGrabbed)
 	{
 		*player.grabbedTime += *player.deltaTime;
-		if (*player.grabbedTime > 0.20)
+		if (*player.grabbedTime > 0.30)
 		{
 			player.disGrabbed=false;
 			*player.grabbedTime = 0;

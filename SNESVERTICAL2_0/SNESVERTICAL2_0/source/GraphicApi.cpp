@@ -97,6 +97,7 @@ void GraphicApi::InitializeAladdin(SceneManager &sceneManager, CCamera * _Camera
   GameObject* aladdin = new Aladdin();
   aladdin->onInit();
   aladdin->setPosition(0, 30, 0);
+  //aladdin->setPosition(504, 30, 0);
 
   Animator *AladdinAnimation = new Animator;
   //init animator of aladdin
@@ -107,6 +108,8 @@ void GraphicApi::InitializeAladdin(SceneManager &sceneManager, CCamera * _Camera
   //set camera to follow aladdin
   _Camera->setObjectFollow(aladdin);
   //create the move component for aladdin
+  AladdinHitbox = new HitBoxAladdin(5, 14);
+  aladdin->setComponente(AladdinHitbox);
   Component* move = new Movement();
   aladdin->setComponente(move);
   Component* Gravity = new GravityAladdin();
@@ -115,11 +118,11 @@ void GraphicApi::InitializeAladdin(SceneManager &sceneManager, CCamera * _Camera
   footaladdin->setType(FOOTCOLLIDER);
   Component* footcollider = footaladdin;
   aladdin->setComponente(footcollider);
-  headCollider* headAladdin = new headCollider(2, 2);
+  headCollider* headAladdin = new headCollider(0.2, 0.2);
+
   Component* headcoll = headAladdin;
   aladdin->setComponente(headcoll);
-  AladdinHitbox = new HitBoxAladdin(6, 20);
-  aladdin->setComponente(AladdinHitbox);
+
   sceneManager.m_AladdinID = aladdin->getID();
   sceneManager.addObject(aladdin);
 }
@@ -186,9 +189,9 @@ void GraphicApi::InitializeColliders(SceneManager &sceneManager, Component *& hi
 //   sceneManager.addObject(GroundGO);
 
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 50, 108, 20, 1);
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 24, 135, 9, 10, 125, 11);
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 87, 135, 9, 10, 125, 11);
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 96, 135, 9, 19.8, 115, 11);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 24, 135, 9, 8, 125, 9);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 87, 135, 9, 8, 125, 9);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 96, 135, 9, 18, 115, 9);
   
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 127, 108, 20, 1);
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 155, 108, 20, 1);
@@ -196,23 +199,29 @@ void GraphicApi::InitializeColliders(SceneManager &sceneManager, Component *& hi
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 220, 108, 20, 1);
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 280, 108, 20, 1);
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 325, 104, 20, 1);
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 324, 141, 33, 10, 131,25);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 324, 141, 33, 8, 131,33);
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 367, 108, 20, 1);
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 453, 141, 38, 10, 131,38);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 453, 141, 38, 8, 131,38);
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 454, 104, 20, 1);
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 504, 138, 68, 10, 128,70);
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 557, 141, 38, 10, 131,38);
-  newTent(GroundGO, floorCollider, sceneManager, hitbox, 504.5, 102, 48, 2.5);
-  newTent(GroundGO, floorCollider, sceneManager, hitbox, 504.5, 73, 28, 2.5);
-  newTent(GroundGO, floorCollider, sceneManager, hitbox, 504.5, 44.5, 18, 2.5);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 504, 138, 68, 8, 128,68);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 557, 141, 38, 8, 131,38);
+  newFloor(GroundGO, floorCollider, sceneManager, hitbox, 504, 102, 47, 2.5);
+  newCornice(GroundGO, floorCollider, sceneManager, hitbox, 483, 102,2, 2);
+  newCornice(GroundGO, floorCollider, sceneManager, hitbox, 527, 102,2, 2);
+  newFloor(GroundGO, floorCollider, sceneManager, hitbox, 504.5, 73, 28, 2.5);
+  newCornice(GroundGO, floorCollider, sceneManager, hitbox, 492, 73, 2, 2);
+  newCornice(GroundGO, floorCollider, sceneManager, hitbox, 518, 73, 2, 2);
+  newFloor(GroundGO, floorCollider, sceneManager, hitbox, 504.5, 44.5, 18, 2.5);
+  newCornice(GroundGO, floorCollider, sceneManager, hitbox, 497, 44.5, 2, 2);
+  newCornice(GroundGO, floorCollider, sceneManager, hitbox, 511, 44.5, 2, 2);
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 554, 104, 20, 1);
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 775, 108, 20, 1);
 
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 740, 135, 40, 10, 125, 45);
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 740, 125, 20, 10, 115, 25);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 740, 135, 38, 8, 125, 40);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 740, 125, 18, 8, 115, 20);
   
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 817, 135, 40, 10, 125, 45);
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 817, 125, 20, 10, 115, 25);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 817, 135, 38, 8, 125, 40);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 817, 125, 18, 8, 115, 20);
 
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 850, 107, 9, 3);
   newTent(GroundGO, floorCollider, sceneManager, hitbox, 874, 88, 9, 3);
@@ -220,28 +229,30 @@ void GraphicApi::InitializeColliders(SceneManager &sceneManager, Component *& hi
   /**
    * @brief : Barrel Wall
    */
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 870, 135, 9, 10, 125, 11);
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 879, 135, 9, 20, 115, 12);
-  newWall(GroundGO, floorCollider, sceneManager, hitbox, 887, 135, 9, 30, 105, 13);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 870, 135, 9, 8, 125, 9);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 879, 135, 9, 18, 115, 9);
+  newWall(GroundGO, floorCollider, sceneManager, hitbox, 887, 135, 9, 28, 105, 9);
 }
 
 void GraphicApi::newWall(GameObject *& GroundGO, Component *& floorCollider, SceneManager &sceneManager, Component *& hitbox, float _posX, float _PosY, float _sizeX, float _SizeY, float _posTopWall, float _hitBoxSize)
 {
   QUAD* Barrel1 = new QUAD(_sizeX, _SizeY);
   Barrel1->setFillColor(sf::Color::Magenta);
+  Barrel1->setFillColor(sf::Color::Transparent);
   Barrel1->setPosition(_posX, _PosY, 0);
   GroundGO = Barrel1;
   boxCollider* Barrel1_BC = new boxCollider();
-  Barrel1_BC->setSize(_sizeX, 8);
+  Barrel1_BC->setSize(_sizeX, _SizeY);
   Barrel1_BC->setType(COLLIDERTYPE::WALLCOLLIDER);
   floorCollider = Barrel1_BC;
   GroundGO->setComponente(floorCollider);
-  hitbox = new HitBox(_sizeX, 8);
+  hitbox = new HitBox(_sizeX, _SizeY);
   GroundGO->setComponente(hitbox);
   sceneManager.addObject(GroundGO);
 
   QUAD* WallTop = new QUAD(_sizeX, 1);
   WallTop->setFillColor(sf::Color::Yellow);
+  WallTop->setFillColor(sf::Color::Transparent);
   WallTop->setPosition(_posX, _posTopWall, 0);
   GroundGO = WallTop;
   boxCollider* WallTop_BC = new boxCollider();
@@ -258,6 +269,7 @@ void GraphicApi::newTent(GameObject *& GroundGO, Component *& floorCollider, Sce
 {
   QUAD* rebound = new QUAD(_sizeX, _SizeY);
   rebound->setFillColor(sf::Color::Magenta);
+  rebound->setFillColor(sf::Color::Transparent);
   rebound->setPosition(_posX, _PosY, 0);
   GroundGO = rebound;
   boxCollider* rebound1 = new boxCollider();
@@ -268,4 +280,38 @@ void GraphicApi::newTent(GameObject *& GroundGO, Component *& floorCollider, Sce
   hitbox = new HitBox(_sizeX, _SizeY);
   GroundGO->setComponente(hitbox);
   sceneManager.addObject(GroundGO);
+}
+
+void GraphicApi::newFloor(GameObject *& GroundGO, Component *& floorCollider, SceneManager & sceneManager, Component *& hitbox, float _posX, float _PosY, float _sizeX, float _SizeY)
+{
+	QUAD* rebound = new QUAD(_sizeX, _SizeY);
+	rebound->setFillColor(sf::Color::Magenta);
+	rebound->setFillColor(sf::Color::Transparent);
+	rebound->setPosition(_posX, _PosY, 0);
+	GroundGO = rebound;
+	boxCollider* rebound1 = new boxCollider();
+	rebound1->setSize(_sizeX, _SizeY);
+	rebound1->setType(COLLIDERTYPE::FLOOTCOLLIDER);
+	floorCollider = rebound1;
+	GroundGO->setComponente(floorCollider);
+	hitbox = new HitBox(_sizeX, _SizeY);
+	GroundGO->setComponente(hitbox);
+	sceneManager.addObject(GroundGO);
+}
+
+void GraphicApi::newCornice(GameObject *& GroundGO, Component *& floorCollider, SceneManager & sceneManager, Component *& hitbox, float _posX, float _PosY, float _sizeX, float _SizeY)
+{
+	QUAD* rebound = new QUAD(_sizeX, _SizeY);
+	rebound->setFillColor(sf::Color::Magenta);
+	rebound->setFillColor(sf::Color::Transparent);
+	rebound->setPosition(_posX, _PosY, 0);
+	GroundGO = rebound;
+	boxCollider* rebound1 = new boxCollider();
+	rebound1->setSize(_sizeX, _SizeY);
+	rebound1->setType(COLLIDERTYPE::CORNICECOLLIDER);
+	floorCollider = rebound1;
+	GroundGO->setComponente(floorCollider);
+	hitbox = new HitBox(_sizeX, _SizeY);
+	GroundGO->setComponente(hitbox);
+	sceneManager.addObject(GroundGO);
 }

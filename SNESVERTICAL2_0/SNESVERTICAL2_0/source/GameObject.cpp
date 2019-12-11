@@ -66,6 +66,18 @@ void GameObject::onDelete()
 	{
 		delete position;				position = nullptr;
 	}
+	if (animatedSpeed)
+	{
+		delete animatedSpeed;			animatedSpeed=nullptr;
+	}
+	if (balancingTime)
+	{
+		delete balancingTime;			balancingTime = nullptr;
+	}
+	if (balancingLarge)
+	{
+		delete balancingLarge;			balancingLarge = nullptr;
+	}
 }
 
 Component* GameObject::getComponente(typecomponent componenttype)
